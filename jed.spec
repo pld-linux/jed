@@ -14,6 +14,9 @@ Source1:	xjed.desktop
 Patch0:		jed-make.patch
 Patch1:		jed-XFree86_keys.patch
 Patch2:		jed-dft_syntax.patch
+Buildrequires:	gpm-devel
+Buildrequires:	slang-devel
+Buildrequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
