@@ -11,10 +11,11 @@ Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
 Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-10.tar.bz2
 Source1:	xjed.desktop
-Patch0:		jed-makefile.patch
-Patch1:		jed-XFree86_keys.patch
-Patch2:		jed-dft_syntax.patch
-Patch3:		jed-keymap.patch
+Patch0:		%{name}-makefile.patch
+Patch1:		%{name}-XFree86_keys.patch
+Patch2:		%{name}-dft_syntax.patch
+Patch3:		%{name}-keymap.patch
+Patch4:		%{name}-home_etc.patch
 Buildrequires:	gpm-devel
 Buildrequires:	slang-devel
 Buildrequires:	XFree86-devel
@@ -111,6 +112,7 @@ sürümü.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS"
