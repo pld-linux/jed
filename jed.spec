@@ -13,6 +13,7 @@ Group(pt):	X11/Aplicações/Editores
 Group(pl):	Aplikacje/Edytory
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
 Source1:	xjed.desktop
+Source2:	jed.conf
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
 Patch4:		%{name}-home_etc.patch
@@ -129,7 +130,7 @@ export CFLAGS
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors \
-	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir}}
+	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir},%{_sysconfdir}}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install info/jed.* $RPM_BUILD_ROOT%{_infodir}
@@ -137,7 +138,7 @@ install info/jed.* $RPM_BUILD_ROOT%{_infodir}
 mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
-
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
 
 gzip -9nf README changes.txt doc/txt/*.txt
 
@@ -157,6 +158,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/jed
 %{_mandir}/man1/jed.*
 %{_infodir}/*
+%{_sysconfdir}/*
 
 %files xjed
 %defattr(644,root,root,755)
