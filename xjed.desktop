@@ -4,6 +4,6 @@ Comment=Xjed Editor
 Comment[pl]=Edytor xjed
 Icon=xjed.png
 Exec=xjed
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8
