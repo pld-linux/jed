@@ -128,13 +128,16 @@ export CFLAGS
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_applnkdir}/Development/Editors}
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors \
+	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir}}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+install info/jed.* $RPM_BUILD_ROOT%{_infodir}
 
 mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
+
 
 gzip -9nf README changes.txt doc/txt/*.txt
 
