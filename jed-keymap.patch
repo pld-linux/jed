@@ -1,0 +1,76 @@
+diff -Naur jed-B0.99-10/lib/bytecomp.sl jed-B0.99-10-p/lib/bytecomp.sl
+--- jed-B0.99-10/lib/bytecomp.sl	Sun Nov 14 07:35:35 1999
++++ jed-B0.99-10-p/lib/bytecomp.sl	Mon Jun 19 11:18:11 2000
+@@ -114,7 +114,6 @@
+    "cmode.sl";
+    "slmode.sl";
+    "search.sl";
+-   "linux.sl";
+    "modeinfo.sl";
+ if (is_defined ("menu_create_menu_bar") == 1)   %  intrinsic fun
+ {
+diff -Naur jed-B0.99-10/lib/linux.sl jed-B0.99-10-p/lib/linux.sl
+--- jed-B0.99-10/lib/linux.sl	Sun Nov 14 07:35:39 1999
++++ jed-B0.99-10-p/lib/linux.sl	Thu Jan  1 01:00:00 1970
+@@ -1,29 +0,0 @@
+-%
+-%  Special file for Linux systems--- do NOT preparse it.
+-%
+-
+-% This file sets up the console keys pgup/dn, etc.  
+-% To use it, simply rename it to defaults.sl.
+-
+-% variable UCB_Mailer;  UCB_Mailer = "/bin/mail";
+-
+-% The directory where info files are kept.  Modify this appropriately.  See
+-% 'install.all' for a discussion of this.
+-
+-%Info_Directory = ???
+-
+-
+-$1 = getenv ("TERM");
+-if ($1 == NULL) $1 = "";
+-if (is_list_element ("linux,console,con80x25,con80x28", $1, ','))
+-{
+-   USE_ANSI_COLORS = 1;   % uncomment if your console is a color one!
+-   OUTPUT_RATE = 0;
+-   TERM_CANNOT_SCROLL = -1;   % Truth is, linux console does not scroll well.
+-   setkey("bol",      		"^[[1~");	% home
+-   setkey("toggle_overwrite",	"^[[2~");       % insert
+-   setkey("delete_char_cmd",	"^[[3~");       % delete
+-   setkey("eol",		"^[[4~");       % end
+-   setkey("page_up",		"^[[5~");	
+-   setkey("page_down",		"^[[6~");
+-}
+diff -Naur jed-B0.99-10/src/keymap.c jed-B0.99-10-p/src/keymap.c
+--- jed-B0.99-10/src/keymap.c	Sun Nov 14 07:35:49 1999
++++ jed-B0.99-10-p/src/keymap.c	Mon Jun 19 11:18:53 2000
+@@ -304,16 +304,18 @@
+ #else
+    
+    /* give vtxxx arrow keys */
+-   SLkm_define_key ("^[[D", (FVOID_STAR) previous_char_cmd, Global_Map);
+-   SLkm_define_key ("^[OD", (FVOID_STAR) previous_char_cmd, Global_Map);
+-   SLkm_define_key ("^[[A", (FVOID_STAR) previous_line_cmd, Global_Map);
+-   SLkm_define_key ("^[OA", (FVOID_STAR) previous_line_cmd, Global_Map);
+-   SLkm_define_key ("^[[B", (FVOID_STAR) next_line_cmd, Global_Map);
+-   SLkm_define_key ("^[OB", (FVOID_STAR) next_line_cmd, Global_Map);
+-   SLkm_define_key ("^[[C", (FVOID_STAR) next_char_cmd, Global_Map);
+-   SLkm_define_key ("^[OC", (FVOID_STAR) next_char_cmd, Global_Map);
+-   SLkm_define_key ("^[[6~", (FVOID_STAR) pagedown_cmd, Global_Map);
+-   SLkm_define_key ("^[[5~", (FVOID_STAR) pageup_cmd, Global_Map);
++   if (SLtt_tgetstr("kl"))
++   SLkm_define_key (SLtt_tgetstr("kl"), (FVOID_STAR) previous_char_cmd, Global_Map);
++   if (SLtt_tgetstr("ku"))
++   SLkm_define_key (SLtt_tgetstr("ku"), (FVOID_STAR) previous_line_cmd, Global_Map);
++   if (SLtt_tgetstr("kd"))
++   SLkm_define_key (SLtt_tgetstr("kd"), (FVOID_STAR) next_line_cmd, Global_Map);
++   if (SLtt_tgetstr("kr"))
++   SLkm_define_key (SLtt_tgetstr("kr"), (FVOID_STAR) next_char_cmd, Global_Map);
++   if (SLtt_tgetstr("kN"))
++   SLkm_define_key (SLtt_tgetstr("kN"), (FVOID_STAR) pagedown_cmd, Global_Map);
++   if (SLtt_tgetstr("kP"))
++   SLkm_define_key (SLtt_tgetstr("kP"), (FVOID_STAR) pageup_cmd, Global_Map);
+    SLkm_define_key ("^K^[[C", (FVOID_STAR) scroll_left, Global_Map);
+    SLkm_define_key ("^K^[[D", (FVOID_STAR) scroll_right, Global_Map);
+    SLkm_define_key ("^K^[[A", (FVOID_STAR) bob, Global_Map);
