@@ -1,12 +1,16 @@
-%define		tar_ver	B0.99-14
+%define		tar_ver	B0.99-15
 Summary:	A small fast editor
 Summary(de):	Ein kleiner, schneller Editor
+Summary(es):	Un pequeЯo y rАpido editor
 Summary(fr):	Un petit Иditeur rapide
 Summary(pl):	MaЁy i szybki edytor
+Summary(pt_BR):	Um pequeno e rАpido editor
+Summary(ru):	Быстрый небольшой текстовый редактор на основе библиотеки slang
 Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
+Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
 Name:		jed
-Version:	0.99.14
-Release:	3
+Version:	0.99.15
+Release:	1
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
@@ -38,6 +42,12 @@ fЭr C, C++ und andere Sprachen, kann Emacs, Wordstar und weitere
 Editoren emulieren und lДъt sich mit Slang-Makros, Farben, Keybindings
 usw. erweitern.
 
+%description -l es
+Jed es un editor compacto y rАpido basado en la biblioteca slang.
+Tiene modos de ediciСn especiales para C, C++ y otros lenguajes. Puede
+emular Emacs, Wordstar y otros editores, y se lo puede configurar con
+macros slang, color, mapas de teclas, etc.
+
 %description -l fr
 Jed est un Иditeur compact basИ sur la librairie slang. Il dispose de
 modes d'Иdition spИciaux pour C, C++, et d'autres langages. Il peut
@@ -52,18 +62,41 @@ on tak©e emulowaФ inne edytory jak Emacs czy Wordstar. Mo©e byФ on w
 peЁni dostosowany do potrzeb u©ytkownika z u©yciem makr slanga daj╠c
 mo©liwo╤Ф zmiany np. kolorСw czy mapowania klawiatury.
 
+%description -l ru
+Jed - это быстрый компактный текстовый редактор, основанный на
+экранной библиотеке SLang. Он имеет специальные режимы редактирования
+для C, C++, и других языков. Jed может эмулировать Emacs, Wordstar и
+другие редакторы и может быть настроен для конкретных условий
+используя макросы, цвета, привязки клавиатуры и т.п. из SLang.
+
+%description -l pt_BR
+Jed И um editor compacto e rАpido baseado na biblioteca slang. Ele tem
+modos de ediГЦo especiais para C, C++ e outras linguagens. Pode emular
+Emacs, Wordstar e outros editores, podendo ser configurado com macros
+slang, cores, mapeamento de teclas, etc.
+
 %description -l tr
 Jed, kЭГЭk ve hЩzlЩ bir metin dЭzenleyicidir. C, C++ ve diПer diller
 iГin Жzel dЭzenleme kiplerine sahiptir. Emacs ve Wordstar'Щn
 komutlarЩnЩ taklit edebilir ve tЭm yetenekleri kullanЩcЩya gЖre
 ayarlanabilir.
 
+%description -l uk
+Jed - це швидкий компактний текстовий редактор, базований на екранн╕й
+б╕бл╕отец╕ SLang. В╕н ма╓ спец╕альн╕ режими редагування для C, C++ та
+╕нших мов. Jed може емулювати Emacs, Wordstar та ╕нш╕ редактори ╕ може
+бути настро╓ний на р╕вн╕ макрос╕в, кольор╕в, прив'язки клав╕ш ╕ т.п.
+
 %package xjed
 Summary:	Jed editor - X version
 Summary(de):	Jed-Editor - X-Version
+Summary(es):	Editor Jed - versiСn X
 Summary(fr):	иditeur Jed - version X
 Summary(pl):	Edytor jed - wersja dla X Window
+Summary(pt_BR):	Editor Jed - versЦo X
+Summary(ru):	Редактор Jed - версия для X Window
 Summary(tr):	Jed metin dЭzenleyici - X sЭrЭmЭ
+Summary(uk):	Редактор Jed - верс╕я для X Window
 Group:		X11/Applications/Editors
 Requires:	%{name} = %{version}
 
@@ -74,21 +107,39 @@ Xjed is the same editor as jed, it just runs in its own X Window.
 Xjed ist der gleiche Editor wie jed, lДuft jedoch in einem eigenen
 X-Window
 
+%description xjed -l es
+Xjed es el editor jed para X Window.
+
 %description xjed -l fr
 Xjed est le mЙme Иditeur que jed, il tourne seulement sur X Window.
 
 %description xjed -l pl
 Xjed jest wersj╠ edytora jed pracuj╠c╠ w X Window.
 
+%description xjed -l pt_BR
+Xjed И o editor jed para X Window.
+
+%description xjed -l ru
+Xjed - это тот же редактор, что и jed, только работающий в собственном
+X-окне.
+
 %description xjed -l tr
-Jed metin dЭzenleyicinin X altЩnda ГalЩЧan sЭrЭmЭ
+Jed metin dЭzenleyicinin X altЩnda ГalЩЧan sЭrЭmЭ.
+
+%description xjed -l uk
+Xjed - це той же редактор, що й jed, т╕льки працюючий у власному
+X-в╕кн╕.
 
 %package -n rgrep
 Summary:	recursive grep utility
 Summary(de):	Rekursives grep-Utility-Programm
+Summary(es):	Utilitario grep recursivo
 Summary(fr):	Utilitaire grep rИcursif
 Summary(pl):	Rekursywna wersja narzЙdzia grep
+Summary(pt_BR):	UtilitАrio grep recursivo
+Summary(ru):	Рекурсивная утилита grep
 Summary(tr):	RekЭrsif bir grep sЭrЭmЭ
+Summary(uk):	Рекурсивна утил╕та grep
 Group:		Applications/Text
 
 %description -n rgrep
@@ -99,6 +150,10 @@ by the author of Jed.
 ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
 markieren kann. Vom Autor von Jed.
 
+%description -n rgrep -l es
+Utilitario grep recursivo que puede destacar la expresiСn encontrada,
+escrito por el autor del editor Jed.
+
 %description -n rgrep -l fr
 grep rИcursif pouvant mettre en Иvidence l'expression trouvИe, par
 l'auteur de Jed.
@@ -108,9 +163,19 @@ rgrep jest programem, ktСry mo©e zaznaczaФ poszukiwane ci╠gi znakСw w
 bie©╠cym katalogu i podkatalogach Ёacz╠cym w sobie cechy funkcjonalne
 u©ywania pary programСw find i grep.
 
+%description -n rgrep -l pt_BR
+UtilitАrio grep recursivo que pode destacar a expressЦo encontrada,
+escrito pelo autor do editor Jed.
+
+%description -n rgrep -l ru
+Рекурсивная утилита grep, умеющая подсвечивать найденные выражения.
+
 %description -n rgrep -l tr
 Jed'in yazarЩndan rekЭrsif bulduПu eЧlemeleri iЧaretleyebilen bir grep
 sЭrЭmЭ.
+
+%description -n rgrep -l uk
+Рекурсивна утил╕та grep, що вм╕╓ п╕дсв╕чувати знайден╕ вирази
 
 %prep
 %setup -q -n %{name}-%{tar_ver}
