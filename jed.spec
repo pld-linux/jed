@@ -107,7 +107,8 @@ sürümü.
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS" \
 LDFLAGS=-s \
-./configure --prefix=/usr
+./configure %{_target} \
+	--prefix=/usr
 make all
 make xjed
 
