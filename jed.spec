@@ -13,7 +13,7 @@ Source1:     xjed.wmconfig
 Patch0:      jed-make.patch
 Patch1:      jed-XFree86_keys.patch
 Patch2:      jed-dft_syntax.patch
-Buildroot:   /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Jed is a fast compact editor based on the slang screen library. It has
