@@ -6,10 +6,10 @@ Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
 Version:	0.99.10
 Release:	2
-Copyright:	GPL
+License:	GPL
 Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
-Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-10.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B%{version}.tar.bz2
 Source1:	xjed.desktop
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
@@ -23,15 +23,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Jed is a fast compact editor based on the slang screen library. It has
-special editing modes for C, C++, and other languages. It can emulate Emacs,
-Wordstar, and other editors, and can be customized with slang macros,
-colors, keybindings, etc.
+special editing modes for C, C++, and other languages. It can emulate
+Emacs, Wordstar, and other editors, and can be customized with slang
+macros, colors, keybindings, etc.
 
 %description -l de
 Jed ist ein schneller, kompakter Editor, der auf der Slang-Screen-Library
-basiert. Er besitzt spezielle Bearbeitungsmodi für C, C++ und andere Sprachen,
-kann Emacs, Wordstar und weitere Editoren emulieren und läßt sich mit
-Slang-Makros, Farben, Keybindings usw. erweitern.
+basiert. Er besitzt spezielle Bearbeitungsmodi für C, C++ und andere
+Sprachen, kann Emacs, Wordstar und weitere Editoren emulieren und läßt sich
+mit Slang-Makros, Farben, Keybindings usw. erweitern.
 
 %description -l fr
 Jed est un éditeur compact basé sur la librairie slang. Il dispose de modes
@@ -47,9 +47,9 @@ dostosowany do potrzeb u¿ytkownika z u¿yciem makr slanga daj±c mo¿liwo¶æ
 zmiany np. kolorów czy mapowania klawiatury.
 
 %description -l tr
-Jed, küçük ve hýzlý bir metin düzenleyicidir. C, C++ ve diðer diller için özel
-düzenleme kiplerine sahiptir. Emacs ve Wordstar'ýn komutlarýný taklit edebilir
-ve tüm yetenekleri kullanýcýya göre ayarlanabilir.
+Jed, küçük ve hýzlý bir metin düzenleyicidir. C, C++ ve diðer diller için
+özel düzenleme kiplerine sahiptir. Emacs ve Wordstar'ýn komutlarýný taklit
+edebilir ve tüm yetenekleri kullanýcýya göre ayarlanabilir.
 
 %package xjed
 Summary:	Jed editor - X version
@@ -83,15 +83,16 @@ Summary(fr):	Utilitaire grep récursif.
 Summary(pl):	Rekursywna wersja narzêdzia grep
 Summary(tr):	Rekürsif bir grep sürümü
 Group:		Utilities/Text
+Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
 
 %description -n rgrep
-a recursive `grep' utility that can highlight the matching expression,
-by the author of Jed.
+a recursive `grep' utility that can highlight the matching expression, by
+the author of Jed.
 
 %description -l de -n rgrep
-ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck markieren
-kann. Vom Autor von Jed.
+ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
+markieren kann. Vom Autor von Jed.
 
 %description -l fr -n rgrep
 grep récursif pouvant mettre en évidence l'expression trouvée, par l'auteur
@@ -126,11 +127,11 @@ make xjed
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{/usr/X11R6/bin,%{_applnkdir}/Editors}
+install -d $RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_applnkdir}/Editors}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-mv	$RPM_BUILD_ROOT%{_bindir}/xjed	$RPM_BUILD_ROOT/usr/X11R6/bin
+mv	$RPM_BUILD_ROOT%{_bindir}/xjed	$RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 install %{SOURCE1}			$RPM_BUILD_ROOT%{_applnkdir}/Editors
 
@@ -157,7 +158,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files xjed
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/X11R6/bin/xjed
+%attr(755,root,root) %{_prefix}/X11R6/bin/xjed
 %{_applnkdir}/Editors/xjed.desktop
 
 %files -n rgrep
