@@ -10,7 +10,7 @@ Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
 Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
 Name:		jed
 Version:	0.99.15
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
@@ -198,7 +198,7 @@ CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors \
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Editors \
 	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir},%{_sysconfdir}} \
 	$RPM_BUILD_ROOT%{_mandir}/pl/man1
 
@@ -207,12 +207,10 @@ install info/jed.* $RPM_BUILD_ROOT%{_infodir}
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Editors
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
 install %{SOURCE3} $RPM_BUILD_ROOT%{_mandir}/pl/man1/jed.1
 install %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/pl/man1/rgrep.1
-
-gzip -9nf README changes.txt doc/txt/*.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -225,7 +223,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz changes.txt.gz doc/txt/*.gz
+%doc README changes.txt doc/txt/*.txt
 %attr(755,root,root) %{_bindir}/jed
 %{_datadir}/jed
 %{_mandir}/man1/jed.*
@@ -236,7 +234,7 @@ rm -rf $RPM_BUILD_ROOT
 %files xjed
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_prefix}/X11R6/bin/xjed
-%{_applnkdir}/Development/Editors/xjed.desktop
+%{_applnkdir}/Editors/xjed.desktop
 
 %files -n rgrep
 %defattr(644,root,root,755)
