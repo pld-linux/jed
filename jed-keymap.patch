@@ -1,6 +1,6 @@
-diff -Nru jed-B0.99-10/lib/bytecomp.sl jed-B0.99-10.new/lib/bytecomp.sl
+diff -Naur jed-B0.99-10/lib/bytecomp.sl jed-B0.99-10-p/lib/bytecomp.sl
 --- jed-B0.99-10/lib/bytecomp.sl	Sun Nov 14 07:35:35 1999
-+++ jed-B0.99-10.new/lib/bytecomp.sl	Sat Nov 27 07:02:34 1999
++++ jed-B0.99-10-p/lib/bytecomp.sl	Mon Jun 19 11:18:11 2000
 @@ -114,7 +114,6 @@
     "cmode.sl";
     "slmode.sl";
@@ -9,9 +9,9 @@ diff -Nru jed-B0.99-10/lib/bytecomp.sl jed-B0.99-10.new/lib/bytecomp.sl
     "modeinfo.sl";
  if (is_defined ("menu_create_menu_bar") == 1)   %  intrinsic fun
  {
-diff -Nru jed-B0.99-10/lib/linux.sl jed-B0.99-10.new/lib/linux.sl
+diff -Naur jed-B0.99-10/lib/linux.sl jed-B0.99-10-p/lib/linux.sl
 --- jed-B0.99-10/lib/linux.sl	Sun Nov 14 07:35:39 1999
-+++ jed-B0.99-10.new/lib/linux.sl	Thu Jan  1 01:00:00 1970
++++ jed-B0.99-10-p/lib/linux.sl	Thu Jan  1 01:00:00 1970
 @@ -1,29 +0,0 @@
 -%
 -%  Special file for Linux systems--- do NOT preparse it.
@@ -42,10 +42,10 @@ diff -Nru jed-B0.99-10/lib/linux.sl jed-B0.99-10.new/lib/linux.sl
 -   setkey("page_up",		"^[[5~");	
 -   setkey("page_down",		"^[[6~");
 -}
-diff -Nru jed-B0.99-10/src/keymap.c jed-B0.99-10.new/src/keymap.c
+diff -Naur jed-B0.99-10/src/keymap.c jed-B0.99-10-p/src/keymap.c
 --- jed-B0.99-10/src/keymap.c	Sun Nov 14 07:35:49 1999
-+++ jed-B0.99-10.new/src/keymap.c	Sat Nov 27 06:55:31 1999
-@@ -304,16 +304,12 @@
++++ jed-B0.99-10-p/src/keymap.c	Mon Jun 19 11:18:53 2000
+@@ -304,16 +304,18 @@
  #else
     
     /* give vtxxx arrow keys */
@@ -59,11 +59,17 @@ diff -Nru jed-B0.99-10/src/keymap.c jed-B0.99-10.new/src/keymap.c
 -   SLkm_define_key ("^[OC", (FVOID_STAR) next_char_cmd, Global_Map);
 -   SLkm_define_key ("^[[6~", (FVOID_STAR) pagedown_cmd, Global_Map);
 -   SLkm_define_key ("^[[5~", (FVOID_STAR) pageup_cmd, Global_Map);
++   if (SLtt_tgetstr("kl"))
 +   SLkm_define_key (SLtt_tgetstr("kl"), (FVOID_STAR) previous_char_cmd, Global_Map);
++   if (SLtt_tgetstr("ku"))
 +   SLkm_define_key (SLtt_tgetstr("ku"), (FVOID_STAR) previous_line_cmd, Global_Map);
++   if (SLtt_tgetstr("kd"))
 +   SLkm_define_key (SLtt_tgetstr("kd"), (FVOID_STAR) next_line_cmd, Global_Map);
++   if (SLtt_tgetstr("kr"))
 +   SLkm_define_key (SLtt_tgetstr("kr"), (FVOID_STAR) next_char_cmd, Global_Map);
++   if (SLtt_tgetstr("kN"))
 +   SLkm_define_key (SLtt_tgetstr("kN"), (FVOID_STAR) pagedown_cmd, Global_Map);
++   if (SLtt_tgetstr("kP"))
 +   SLkm_define_key (SLtt_tgetstr("kP"), (FVOID_STAR) pageup_cmd, Global_Map);
     SLkm_define_key ("^K^[[C", (FVOID_STAR) scroll_left, Global_Map);
     SLkm_define_key ("^K^[[D", (FVOID_STAR) scroll_right, Global_Map);
