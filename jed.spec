@@ -6,7 +6,7 @@ Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
 Version:	0.99.14
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Editors
 Group(de):	Applikationen/Editors
@@ -15,6 +15,8 @@ Group(pt):	Aplicações/Editores
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
+Source3:	%{name}.1.pl
+Source4:	rgrep.1.pl
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
@@ -141,7 +143,8 @@ autoconf
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors \
-	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir},%{_sysconfdir}}
+	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir},%{_sysconfdir}} \
+	$RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install info/jed.* $RPM_BUILD_ROOT%{_infodir}
@@ -150,6 +153,8 @@ mv -f $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
+install %{SOURCE3} $RPM_BUILD_ROOT%{_mandir}/pl/man1/jed.1
+install %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/pl/man1/rgrep.1
 
 gzip -9nf README changes.txt doc/txt/*.txt
 
@@ -168,6 +173,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/jed
 %{_datadir}/jed
 %{_mandir}/man1/jed.*
+%lang(pl) %{_mandir}/pl/man1/jed.*
 %{_infodir}/*
 %{_sysconfdir}/*
 
@@ -180,3 +186,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rgrep
 %{_mandir}/man1/rgrep.*
+%lang(pl) %{_mandir}/pl/man1/rgrep.*
