@@ -8,8 +8,9 @@ Version:	0.99.8
 Release:	1
 Copyright:	GPL
 Group:		Applications/Editors
+Group(pl):	Aplikacje/Edytory
 Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-8.tar.bz2
-Source1:	xjed.wmconfig
+Source1:	xjed.desktop
 Patch0:		jed-make.patch
 Patch1:		jed-XFree86_keys.patch
 Patch2:		jed-dft_syntax.patch
@@ -46,13 +47,14 @@ düzenleme kiplerine sahiptir. Emacs ve Wordstar'ýn komutlarýný taklit edebilir
 ve tüm yetenekleri kullanýcýya göre ayarlanabilir.
 
 %package xjed
-Summary:     Jed editor - X version
-Summary(de): Jed-Editor - X-Version 
-Summary(fr): Éditeur Jed - version X
-Summary(pl): Edytor jed - wersja pod X Window
-Summary(tr): Jed metin düzenleyici - X sürümü
-Group:       Applications/Editors
-Requires:    %{name} = %{version}
+Summary:	Jed editor - X version
+Summary(de):	Jed-Editor - X-Version 
+Summary(fr):	Éditeur Jed - version X
+Summary(pl):	Edytor jed - wersja pod X Window
+Summary(tr):	Jed metin düzenleyici - X sürümü
+Group:		X11/Applications/Editors
+Group(pl):	X11/Aplikacje/Edytory
+Requires:	%{name} = %{version}
 
 %description xjed
 Xjed is the same editor as jed, it just runs in its own X Window.
@@ -71,12 +73,13 @@ Xjed jest wersj± pracuj±c± po X Window edytora jed.
 Jed metin düzenleyicinin X altýnda çalýþan sürümü
 
 %package -n rgrep
-Summary:     recursive grep utility
-Summary(de): Rekursives grep-Utility-Programm
-Summary(fr): Utilitaire grep récursif.
-Summary(pl): Rekursywna wersja narzêdzie grep
-Summary(tr): Rekürsif bir grep sürümü
-Group:       Utilities/Text
+Summary:	recursive grep utility
+Summary(de):	Rekursives grep-Utility-Programm
+Summary(fr):	Utilitaire grep récursif.
+Summary(pl):	Rekursywna wersja narzêdzie grep
+Summary(tr):	Rekürsif bir grep sürümü
+Group:		Utilities/Text
+Group(pl):	Narzêdzia/Tekst
 
 %description -n rgrep
 a recursive `grep' utility that can highlight the matching expression,
@@ -105,26 +108,27 @@ sürümü.
 %patch1 -p1
 
 %build
-CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS" \
-LDFLAGS=-s \
-./configure %{_target_platform} \
-	--prefix=/usr
+CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS"
+LDFLAGS="-s"
+export CFLAGS LDFLAGS
+%configure
+
 make all
 make xjed
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{/etc/X11/wmconfig,%{_bindir},%{_mandir}/man1,%{_libdir}/jed,usr/X11R6/bin}
+install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1,%{_libdir}/jed} \
+	$RPM_BUILD_ROOT/usr/X11R6/{bin,share/applnk/Editors}
 
-cp -r lib $RPM_BUILD_ROOT%{_libdir}/jed
+cp -r lib  $RPM_BUILD_ROOT%{_libdir}/jed
 cp -r info $RPM_BUILD_ROOT%{_libdir}/jed
 
 install -s src/objs/{jed,rgrep} $RPM_BUILD_ROOT%{_bindir}
-install -s src/objs/xjed $RPM_BUILD_ROOT/usr/X11R6/bin
+install -s src/objs/xjed 	$RPM_BUILD_ROOT/usr/X11R6/bin
+install doc/{jed.1,rgrep.1} 	$RPM_BUILD_ROOT%{_mandir}/man1
 
-install doc/{jed.1,rgrep.1} $RPM_BUILD_ROOT%{_mandir}/man1
-
-install $RPM_SOURCE_DIR/xjed.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/xjed
+install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Editors
 
 gzip -9nf doc/{*.txt,README} README changes.txt \
 	$RPM_BUILD_ROOT%{_mandir}/man1/*
@@ -147,7 +151,7 @@ rm -rf $RPM_BUILD_ROOT
 %files xjed
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/X11R6/bin/xjed
-%attr(644,root,root) %config(missingok) /etc/X11/wmconfig/xjed
+/usr/X11R6/share/applnk/Editors/xjed.desktop
 
 %files -n rgrep
 %defattr(644,root,root,755)
