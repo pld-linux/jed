@@ -9,14 +9,16 @@ Version:	0.99.13
 Release:	1
 License:	GPL
 Group:		Applications/Editors
-Group(pt):	X11/Aplicações/Editores
+Group(de):	Applikationen/Editors
 Group(pl):	Aplikacje/Edytory
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
-Source1:	xjed.desktop
-Source2:	jed.conf
+Group(pt):	Aplicações/Editores
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{%{name}_ver}.tar.bz2
+Source1:	x%{name}.desktop
+Source2:	%{name}.conf
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
-Patch4:		%{name}-home_etc.patch
+Patch2:		%{name}-home_etc.patch
+patch3:		%{name}-info.patch
 Buildrequires:	gpm-devel
 Buildrequires:	slang-devel
 Buildrequires:	XFree86-devel
@@ -62,7 +64,9 @@ Summary(fr):	Éditeur Jed - version X
 Summary(pl):	Edytor jed - wersja dla X Window
 Summary(tr):	Jed metin düzenleyici - X sürümü
 Group:		X11/Applications/Editors
+Group(de):	X11/Applikationen/Editors
 Group(pl):	X11/Aplikacje/Edytory
+Group(pt):	X11/Aplicações/Editores
 Requires:	%{name} = %{version}
 
 %description xjed
@@ -87,9 +91,10 @@ Summary(de):	Rekursives grep-Utility-Programm
 Summary(fr):	Utilitaire grep récursif.
 Summary(pl):	Rekursywna wersja narzêdzia grep
 Summary(tr):	Rekürsif bir grep sürümü
-Group:		Utilities/Text
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 
 %description -n rgrep
 a recursive `grep' utility that can highlight the matching expression,
@@ -116,11 +121,12 @@ sürümü.
 %setup -q -n %{name}-%{jed_ver}
 %patch0 -p1
 %patch1 -p1
-%patch4 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
-CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS"
-export CFLAGS
+CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr \
+	%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}"
 %configure
 
 %{__make} all
@@ -128,7 +134,6 @@ export CFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors \
 	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir},%{_sysconfdir}}
 
