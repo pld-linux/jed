@@ -24,6 +24,7 @@ Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
 Patch3:		%{name}-info.patch
+Patch4:		%{name}-ac_am.patch
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -185,11 +186,11 @@ sürümü.
 %patch1 -p1
 #%patch2 -p1
 %patch3 -p1
-
-mv -f autoconf/configure.in .
-mv -f autoconf/aclocal.m4 acinclude.m4
+%patch4 -p1
 
 %build
+mv -f autoconf/configure.in .
+mv -f autoconf/aclocal.m4 acinclude.m4
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 %{__aclocal}
 %{__autoconf}
