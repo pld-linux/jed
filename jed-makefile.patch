@@ -1,5 +1,5 @@
---- jed-B0.99-15/src/Makefile.in.orig	Mon Oct  8 06:48:16 2001
-+++ jed-B0.99-15/src/Makefile.in	Tue Apr 23 16:02:39 2002
+--- jed-0.99-16/src/Makefile.in.orig	2002-10-20 08:55:30.000000000 +0200
++++ jed-0.99-16/src/Makefile.in	2003-11-25 23:48:06.000000000 +0100
 @@ -14,9 +14,11 @@
  exec_prefix = @exec_prefix@
  #JED_ROOT = $(HOME)/src/jed# <--- make sure # is at end of file!!
@@ -13,16 +13,7 @@
  INSTALL		= @INSTALL@
  INSTALL_DATA	= @INSTALL_DATA@
  MKINSDIR = ../autoconf/mkinsdir.sh
-@@ -28,7 +30,7 @@
- JED_COLOR_FILES = ../lib/colors/*.sl ../lib/colors/README
- XJED_COLOR_FILES = ../lib/colors/Xjed/*.sl
- JED_TM_FILES = ../lib/tm/*.tm 
--JED_INFO_FILES = ../info/*
-+JED_INFO_FILES = ../info/jed.*
- 
- #---------------------------------------------------------------------------
- # DESTDIR is designed to facilitate making packages.  Normally it is empty
-@@ -52,10 +54,10 @@
+@@ -51,10 +53,10 @@
  #---------------------------------------------------------------------------
  # 1. Linux GPM Mouse support
  #    Uncomment next FOUR lines for GPM mouse support
@@ -35,5 +26,5 @@
 +GPMMOUSEO = gpmmouse.o
 +OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
  
- #---------------------------------------------------------------------------
- # S-Lang library location
+  
+ # 2. XFree86 XRENDERFONT (Anti-aliased font) support for XJED

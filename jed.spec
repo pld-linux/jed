@@ -1,4 +1,4 @@
-%define		tar_ver	B0.99-15
+%define		tar_ver	0.99-16
 Summary:	A small fast editor
 Summary(de):	Ein kleiner, schneller Editor
 Summary(es):	Un pequeЯo y rАpido editor
@@ -9,12 +9,12 @@ Summary(ru):	Быстрый небольшой текстовый редактор на основе библиотеки slang
 Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
 Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
 Name:		jed
-Version:	0.99.15
-Release:	3
+Version:	0.99.16
+Release:	1
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
-# Source0-md5:	df29d28238550b0b428bcca6a952d277
+# Source0-md5:	c2bcd89c92a120559865a539c2705999
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
