@@ -8,7 +8,7 @@ Version:	0.99.8
 Release:	1
 Copyright:	GPL
 Group:		Applications/Editors
-Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-8.tar.gz
+Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-8.tar.bz2
 Source1:	xjed.wmconfig
 Patch0:		jed-make.patch
 Patch1:		jed-XFree86_keys.patch
