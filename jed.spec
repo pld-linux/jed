@@ -86,7 +86,10 @@ sürümü.
 %patch1 -p1
 
 %build
-default_jed_root=/usr/lib CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS" ./configure --prefix=/usr
+default_jed_root=/usr/lib \
+CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS" \
+LDFLAGS=-s \
+./configure --prefix=/usr
 make all
 make xjed
 
@@ -129,11 +132,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Wed Jun 17 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.98.7-1]
+  [1.0-2]
 - added -q %setup parameter,
 - added using %%{name} macro in Source,
 - spec file rewritten for using Buildroot,
 - added %clean section,
+- added LDFLAGS=-s (for dynamic linking with slang),
 - removed not neccesary now patches,
 - added %defattr and %attr macros in %files (allows building package from
   non-root account).
