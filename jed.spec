@@ -4,11 +4,11 @@ Summary(fr): Un petit éditeur rapide
 Summary(pl): Ma³y i szybki edytor
 Summary(tr): Küçük, hýzlý bir metin düzenleyici
 Name:        jed
-Version:     0.98.7
+Version:     0.99.6
 Release:     1
 Copyright:   GPL
 Group:       Applications/Editors
-Source0:     ftp://space.mit.edu/pub/davis/jed/%{name}0.98-7.tar.gz
+Source0:     ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-6.tar.gz
 Source1:     xjed.wmconfig
 Patch0:      jed-make.patch
 Patch1:      jed-XFree86_keys.patch
