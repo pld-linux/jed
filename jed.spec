@@ -23,12 +23,12 @@ Source5:	x%{name}.png
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
-patch3:		%{name}-info.patch
-BuildRequires:	gpm-devel
-BuildRequires:	slang-devel
+Patch3:		%{name}-info.patch
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gpm-devel
+BuildRequires:	slang-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
