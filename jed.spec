@@ -9,7 +9,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
-Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B%{version}.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-B0.99-10.tar.bz2
 Source1:	xjed.desktop
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
