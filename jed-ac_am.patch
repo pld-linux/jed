@@ -1,0 +1,26 @@
+--- jed-0.99-16/autoconf/aclocal.m4.orig	2002-10-20 08:55:30.000000000 +0200
++++ jed-0.99-16/autoconf/aclocal.m4	2004-07-07 13:03:09.202804256 +0200
+@@ -187,21 +187,13 @@
+   generic_include=`echo $include_and_lib | tr ',' ' ' | awk '{print [$]1}'`
+   generic_lib=`echo $include_and_lib | tr ',' ' ' | awk '{print [$]2}'`
+   echo Looking for $1.h in $generic_include
+-  echo and lib$1.a in $generic_lib
+-  if test -r $generic_include/$1.h && test -r $generic_lib/lib$1.a
++  echo and lib$1.so in $generic_lib
++  if test -r $generic_include/$1.h && test -r $generic_lib/lib$1.so
+   then
+     echo Found it.
+     JD_UP_NAME[]_LIB_DIR="$generic_lib"
+     JD_UP_NAME[]_INCLUDE="$generic_include"
+     break
+-  else
+-    if test -r $generic_include/$1.h && test -r $generic_lib/lib$1.so
+-    then
+-      echo Found it.
+-      JD_UP_NAME[]_LIB_DIR="$generic_lib"
+-      JD_UP_NAME[]_INCLUDE="$generic_include"
+-      break
+-    fi
+   fi
+ done
+ 
