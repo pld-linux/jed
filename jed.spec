@@ -190,7 +190,7 @@ mv -f autoconf/aclocal.m4 acinclude.m4
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 aclocal
-autoconf
+%{__autoconf}
 %configure
 
 %{__make} all
