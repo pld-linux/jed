@@ -133,7 +133,7 @@ Xjed - це той же редактор, що й jed, т╕льки працюючий у власному
 X-в╕кн╕.
 
 %package -n rgrep
-Summary:	recursive grep utility
+Summary:	Recursive grep utility
 Summary(de):	Rekursives grep-Utility-Programm
 Summary(es):	Utilitario grep recursivo
 Summary(fr):	Utilitaire grep rИcursif
@@ -145,11 +145,11 @@ Summary(uk):	Рекурсивна утил╕та grep
 Group:		Applications/Text
 
 %description -n rgrep
-a recursive `grep' utility that can highlight the matching expression,
+A recursive `grep' utility that can highlight the matching expression,
 by the author of Jed.
 
 %description -n rgrep -l de
-ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
+Ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
 markieren kann. Vom Autor von Jed.
 
 %description -n rgrep -l es
