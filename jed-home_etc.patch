@@ -1,42 +1,52 @@
-diff -ruN jed-B0.99-10.orig/lib/site.sl jed-B0.99-10/lib/site.sl
---- jed-B0.99-10.orig/lib/site.sl	Sun Nov 14 07:35:41 1999
-+++ jed-B0.99-10/lib/site.sl	Mon Apr 10 13:42:21 2000
-@@ -2434,17 +2434,30 @@
-         file = getenv ("JED_HOME");
- 	if (file == NULL)
- 	  {
--	     file = getenv("HOME");
--	     if (file == NULL) file = "";
-+	     file = getenv("CONFIG_DIR");
-+	     if (file == NULL)
-+	       {
-+	          file = getenv("HOME");
-+		  if (file == NULL)
-+		     file ="";
-+
-+		  file = dircat (file,".jedrc");
-+	       }
-+	     else
-+	       {
-+	          if (strncmp(getenv("CONFIG_DIR"), "/",0))
-+		     file = sprintf("%s/jed",getenv("CONFIG_DIR"));
-+		  else
-+		     file = sprintf("%s/%s/jed",getenv("HOME"),getenv("CONFIG_DIR"));
-+
-+		  file = dircat (file,"jedrc");
-+	       }
- 	  }
- #endif
--	file = dircat (file, 
--#ifdef UNIX
--		       ".jedrc"
+diff -Naur jed-B0.99-13/lib/site.sl jed-B0.99-13-p/lib/site.sl
+--- jed-B0.99-13/lib/site.sl	Mon Feb 19 19:33:19 2001
++++ jed-B0.99-13-p/lib/site.sl	Thu Feb 22 09:35:05 2001
+@@ -2772,14 +2772,6 @@
+ #ifdef VMS
+    init_file = "SYS$LOGIN:";
+    if (NULL != getenv("JED_HOME")) init_file = "JED_HOME:";
 -#else
--		       "jed.rc"
-+
-+#ifndef UNIX
-+	file = dircat (file,"jed.rc");
+-   init_file = getenv ("JED_HOME");
+-   if (init_file == NULL)
+-     {
+-	init_file = getenv("HOME");
+-	if (init_file == NULL) init_file = "";
+-     }
+-#endif
+    init_file = dircat (init_file,
+ #ifdef UNIX
+ 		       ".jedrc"
+@@ -2788,6 +2780,33 @@
  #endif
--		       );
+ 		       );
  
- 	if (file_status (file) != 1) 
- 	  {
++#else
++   init_file = getenv ("JED_HOME");
++   if (init_file == NULL) {
++	init_file = getenv("CONFIG_DIR");
++	if (init_file == NULL) {
++		init_file = getenv("HOME");
++		if (init_file == NULL)
++		init_file = "";
++             
++		init_file = dircat (init_file,
++#ifdef UNIX
++			".jedrc"
++#else
++			"jed.rc"
++#endif
++		);
++	} else {
++		if (strncmp(getenv("CONFIG_DIR"), "/",0))
++			init_file = sprintf("%s/jed",getenv("CONFIG_DIR"));
++		else
++			init_file = sprintf("%s/%s/jed",getenv("HOME"),
++				getenv("CONFIG_DIR"));
++		init_file = dircat (file,"jedrc");
++	}
++   }
++
++#endif
+    % if first argument is -n then do NOT load init file
+    while (n) 
+      {
