@@ -1,21 +1,20 @@
+%define		jed_ver	B0.99-13
 Summary:	A small fast editor
 Summary(de):	Ein kleiner, schneller Editor 
 Summary(fr):	Un petit éditeur rapide
 Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
-Version:	0.99.10
-Release:	4
+Version:	0.99.13
+Release:	1
 License:	GPL
 Group:		Applications/Editors
 Group(pt):	X11/Aplicações/Editores
 Group(pl):	Aplikacje/Edytory
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-B0.99-10.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
 Source1:	xjed.desktop
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
-Patch2:		%{name}-dft_syntax.patch
-Patch3:		%{name}-keymap.patch
 Patch4:		%{name}-home_etc.patch
 Buildrequires:	gpm-devel
 Buildrequires:	slang-devel
@@ -113,17 +112,14 @@ Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
 
 %prep
-%setup -q -n %{name}-B0.99-10
+%setup -q -n %{name}-%{jed_ver}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
 %patch4 -p1
 
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS"
-LDFLAGS="-s"
-export CFLAGS LDFLAGS
+export CFLAGS
 %configure
 
 %{__make} all
@@ -140,9 +136,7 @@ mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
 
-gzip -9nf README changes.txt doc/*.txt \
-	$RPM_BUILD_ROOT%{_mandir}/man1/* \
-	$RPM_BUILD_ROOT%{_infodir}/*
+gzip -9nf README changes.txt doc/txt/*.txt
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -158,7 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.gz changes.txt.gz doc/*.gz
 %attr(755,root,root) %{_bindir}/jed
 %{_datadir}/jed
-%{_mandir}/man1/jed.1.gz
+%{_mandir}/man1/jed.*
 %{_infodir}/*
 
 %files xjed
@@ -169,4 +163,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n rgrep
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rgrep
-%{_mandir}/man1/rgrep.1.gz
+%{_mandir}/man1/rgrep.*
