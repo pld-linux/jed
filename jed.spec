@@ -12,7 +12,7 @@ Group:		Applications/Editors
 Group(de):	Applikationen/Editors
 Group(pl):	Aplikacje/Edytory
 Group(pt):	Aplicações/Editores
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{%{name}_ver}.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Patch0:		%{name}-makefile.patch
