@@ -5,7 +5,7 @@ Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
 Version:	0.99.10
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Editors
 Group(pt):	X11/Aplicações/Editores
