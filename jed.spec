@@ -10,7 +10,7 @@ Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
 Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
 Name:		jed
 Version:	0.99.15
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
@@ -18,6 +18,7 @@ Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
 Source4:	rgrep.1.pl
+Source5:	x%{name}.png
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
@@ -198,7 +199,7 @@ CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Editors \
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Editors,%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_infodir},%{_sysconfdir}} \
 	$RPM_BUILD_ROOT%{_mandir}/pl/man1
 
@@ -211,6 +212,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Editors
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
 install %{SOURCE3} $RPM_BUILD_ROOT%{_mandir}/pl/man1/jed.1
 install %{SOURCE4} $RPM_BUILD_ROOT%{_mandir}/pl/man1/rgrep.1
+install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -235,6 +237,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_prefix}/X11R6/bin/xjed
 %{_applnkdir}/Editors/xjed.desktop
+%{_pixmapsdir}/*.png
 
 %files -n rgrep
 %defattr(644,root,root,755)
