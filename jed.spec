@@ -133,7 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc doc README changes.txt
 %docdir /usr/lib/jed/info
-%attr(644, root,  man) %{_mandir}/man1/jed.1
+%{_mandir}/man1/jed.1
 %attr(755, root, root) /usr/bin/jed
 %dir /usr/lib/jed
 %dir /usr/lib/jed/info
@@ -147,7 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n rgrep
 %attr(755, root, root) /usr/bin/rgrep
-%attr(644, root,  man) %{_mandir}/man1/rgrep.1
+%{_mandir}/man1/rgrep.1
 
 %changelog
 * Wed Jun 17 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
