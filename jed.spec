@@ -116,8 +116,8 @@ make xjed
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{/etc/X11/wmconfig,usr/{bin,man/man1,lib/jed,X11R6/bin}}
 
-cp -r lib $RPM_BUILD_ROOT/usr/lib/jed
-cp -r info $RPM_BUILD_ROOT/usr/lib/jed
+cp -r lib $RPM_BUILD_ROOT%{_libdir}/jed
+cp -r info $RPM_BUILD_ROOT%{_libdir}/jed
 
 install -s src/objs/{jed,rgrep} $RPM_BUILD_ROOT/usr/bin
 install -s src/objs/xjed $RPM_BUILD_ROOT/usr/X11R6/bin
@@ -132,14 +132,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644, root, root, 755)
 %doc doc README changes.txt
-%docdir /usr/lib/jed/info
+%docdir %{_libdir}/jed/info
 %{_mandir}/man1/jed.1
 %attr(755, root, root) /usr/bin/jed
-%dir /usr/lib/jed
-%dir /usr/lib/jed/info
-%dir /usr/lib/jed/lib
-/usr/lib/jed/info/*
-/usr/lib/jed/lib/*
+%dir %{_libdir}/jed
+%dir %{_libdir}/jed/info
+%dir %{_libdir}/jed/lib
+%{_libdir}/jed/info/*
+%{_libdir}/jed/lib/*
 
 %files xjed
 %attr(755, root, root) /usr/X11R6/bin/xjed
