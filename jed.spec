@@ -1,18 +1,18 @@
-Summary:     A small fast editor
-Summary(de): Ein kleiner, schneller Editor 
-Summary(fr): Un petit éditeur rapide
-Summary(pl): Ma³y i szybki edytor
-Summary(tr): Küçük, hýzlý bir metin düzenleyici
-Name:        jed
-Version:     0.99.6
-Release:     1
-Copyright:   GPL
-Group:       Applications/Editors
-Source0:     ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-6.tar.gz
-Source1:     xjed.wmconfig
-Patch0:      jed-make.patch
-Patch1:      jed-XFree86_keys.patch
-Patch2:      jed-dft_syntax.patch
+Summary:	A small fast editor
+Summary(de):	Ein kleiner, schneller Editor 
+Summary(fr):	Un petit éditeur rapide
+Summary(pl):	Ma³y i szybki edytor
+Summary(tr):	Küçük, hýzlý bir metin düzenleyici
+Name:		jed
+Version:	0.99.6
+Release:	1
+Copyright:	GPL
+Group:		Applications/Editors
+Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-6.tar.gz
+Source1:	xjed.wmconfig
+Patch0:		jed-make.patch
+Patch1:		jed-XFree86_keys.patch
+Patch2:		jed-dft_syntax.patch
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -100,7 +100,7 @@ Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
 
 %prep
-%setup -q -n jed
+%setup -q -n %{name}-B0.99-6
 %patch0 -p1
 %patch1 -p1
 
@@ -114,7 +114,7 @@ make xjed
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{/etc/X11/wmconfig,usr/{bin,man/man1,lib/jed,X11R6/bin}}
+install -d $RPM_BUILD_ROOT/{/etc/X11/wmconfig,%{_bindir},%{_mandir}/man1,%{_libdir}/jed,usr/X11R6/bin}
 
 cp -r lib $RPM_BUILD_ROOT%{_libdir}/jed
 cp -r info $RPM_BUILD_ROOT%{_libdir}/jed
@@ -126,14 +126,17 @@ install doc/{jed.1,rgrep.1} $RPM_BUILD_ROOT%{_mandir}/man1
 
 install $RPM_SOURCE_DIR/xjed.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/xjed
 
+gzip -9nf doc/{*.txt,README} README changes.txt \
+	$RPM_BUILD_ROOT%{_mandir}/man1/*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc README changes.txt
+%doc doc README.gz changes.txt.gz
 %docdir %{_libdir}/jed/info
-%{_mandir}/man1/jed.1
+%{_mandir}/man1/jed.1*
 %attr(755,root,root) %{_bindir}/jed
 %dir %{_libdir}/jed
 %dir %{_libdir}/jed/info
@@ -142,9 +145,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/jed/lib/*
 
 %files xjed
+%defattr(644,root,root,755)
 %attr(755,root,root) /usr/X11R6/bin/xjed
 %attr(644,root,root) %config(missingok) /etc/X11/wmconfig/xjed
 
 %files -n rgrep
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rgrep
-%{_mandir}/man1/rgrep.1
+%{_mandir}/man1/rgrep.1*
