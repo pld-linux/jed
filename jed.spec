@@ -130,11 +130,11 @@ install $RPM_SOURCE_DIR/xjed.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/xjed
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc doc README changes.txt
 %docdir %{_libdir}/jed/info
 %{_mandir}/man1/jed.1
-%attr(755, root, root) %{_bindir}/jed
+%attr(755,root,root) %{_bindir}/jed
 %dir %{_libdir}/jed
 %dir %{_libdir}/jed/info
 %dir %{_libdir}/jed/lib
@@ -142,11 +142,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/jed/lib/*
 
 %files xjed
-%attr(755, root, root) /usr/X11R6/bin/xjed
-%attr(644, root, root) %config(missingok) /etc/X11/wmconfig/xjed
+%attr(755,root,root) /usr/X11R6/bin/xjed
+%attr(644,root,root) %config(missingok) /etc/X11/wmconfig/xjed
 
 %files -n rgrep
-%attr(755, root, root) %{_bindir}/rgrep
+%attr(755,root,root) %{_bindir}/rgrep
 %{_mandir}/man1/rgrep.1
 
 %changelog
