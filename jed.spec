@@ -1,6 +1,6 @@
 %define		jed_ver	B0.99-14
 Summary:	A small fast editor
-Summary(de):	Ein kleiner, schneller Editor 
+Summary(de):	Ein kleiner, schneller Editor
 Summary(fr):	Un petit éditeur rapide
 Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
@@ -9,7 +9,7 @@ Version:	0.99.14
 Release:	3
 License:	GPL
 Group:		Applications/Editors
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{%{name}_ver}.tar.bz2
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
@@ -60,7 +60,7 @@ ayarlanabilir.
 
 %package xjed
 Summary:	Jed editor - X version
-Summary(de):	Jed-Editor - X-Version 
+Summary(de):	Jed-Editor - X-Version
 Summary(fr):	Éditeur Jed - version X
 Summary(pl):	Edytor jed - wersja dla X Window
 Summary(tr):	Jed metin düzenleyici - X sürümü
@@ -70,17 +70,17 @@ Requires:	%{name} = %{version}
 %description xjed
 Xjed is the same editor as jed, it just runs in its own X Window.
 
-%description -l de xjed
+%description xjed -l de
 Xjed ist der gleiche Editor wie jed, läuft jedoch in einem eigenen
 X-Window
 
-%description -l fr xjed
+%description xjed -l fr
 Xjed est le même éditeur que jed, il tourne seulement sur X Window.
 
-%description -l pl xjed
+%description xjed -l pl
 Xjed jest wersj± edytora jed pracuj±c± w X Window.
 
-%description -l tr xjed
+%description xjed -l tr
 Jed metin düzenleyicinin X altýnda çalýþan sürümü
 
 %package -n rgrep
@@ -95,20 +95,20 @@ Group:		Applications/Text
 a recursive `grep' utility that can highlight the matching expression,
 by the author of Jed.
 
-%description -l de -n rgrep
+%description -n rgrep -l de
 ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
 markieren kann. Vom Autor von Jed.
 
-%description -l fr -n rgrep
+%description -n rgrep -l fr
 grep récursif pouvant mettre en évidence l'expression trouvée, par
 l'auteur de Jed.
 
-%description -l pl -n rgrep
+%description -n rgrep -l pl
 rgrep jest programem, który mo¿e zaznaczaæ poszukiwane ci±gi znaków w
 bie¿±cym katalogu i podkatalogach ³acz±cym w sobie cechy funkcjonalne
 u¿ywania pary programów find i grep.
 
-%description -l tr -n rgrep
+%description -n rgrep -l tr
 Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
 
