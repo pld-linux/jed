@@ -1,6 +1,18 @@
 --- jed-0.99-16/autoconf/aclocal.m4.orig	2002-10-20 08:55:30.000000000 +0200
-+++ jed-0.99-16/autoconf/aclocal.m4	2004-07-07 13:03:09.202804256 +0200
-@@ -187,21 +187,13 @@
++++ jed-0.99-16/autoconf/aclocal.m4	2004-07-07 13:16:19.944593232 +0200
+@@ -174,10 +174,7 @@
+ test "x$exec_prefix" = "xNONE" && exec_prefix="$prefix"
+ JD_Search_Dirs="$JD_Search_Dirs \
+                 $includedir,$libdir \
+-                /usr/local/include,/usr/local/lib \
+-		/usr/include,/usr/lib \
+-		/usr/include/$1,/usr/lib \
+-		/usr/include/$1,/usr/lib/$1"
++		/usr/include/$1,$libdir"
+ 
+ echo looking for the JD_UP_NAME library
+ 
+@@ -187,21 +184,13 @@
    generic_include=`echo $include_and_lib | tr ',' ' ' | awk '{print [$]1}'`
    generic_lib=`echo $include_and_lib | tr ',' ' ' | awk '{print [$]2}'`
    echo Looking for $1.h in $generic_include
