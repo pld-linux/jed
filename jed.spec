@@ -4,20 +4,24 @@ Summary(fr):	Un petit éditeur rapide
 Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
-Version:	0.99.8
-Release:	2
+Version:	0.99.10
+Release:	1
 Copyright:	GPL
 Group:		Applications/Editors
 Group(pl):	Aplikacje/Edytory
-Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-8.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/%{name}-B0.99-10.tar.bz2
 Source1:	xjed.desktop
 Patch0:		jed-make.patch
 Patch1:		jed-XFree86_keys.patch
 Patch2:		jed-dft_syntax.patch
+Patch3:		jed-DESTDIR.patch
+Patch4:		jed-keymap.patch
 Buildrequires:	gpm-devel
 Buildrequires:	slang-devel
 Buildrequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_applnkdir	/usr/X11R6/share/applnk/
 
 %description
 Jed is a fast compact editor based on the slang screen library. It has
@@ -105,9 +109,12 @@ Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
 
 %prep
-%setup -q -n %{name}-B0.99-8
+%setup -q -n %{name}-B0.99-10
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS"
@@ -120,19 +127,15 @@ make xjed
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1,%{_libdir}/jed} \
-	$RPM_BUILD_ROOT/usr/X11R6/{bin,share/applnk/Editors}
 
-cp -r lib  $RPM_BUILD_ROOT%{_libdir}/jed
-cp -r info $RPM_BUILD_ROOT%{_libdir}/jed
+install -d $RPM_BUILD_ROOT{/usr/X11R6/bin,%{_applnkdir}/Editors}
 
-install -s src/objs/{jed,rgrep} $RPM_BUILD_ROOT%{_bindir}
-install -s src/objs/xjed 	$RPM_BUILD_ROOT/usr/X11R6/bin
-install doc/{jed.1,rgrep.1} 	$RPM_BUILD_ROOT%{_mandir}/man1
+make install DESTDIR=$RPM_BUILD_ROOT
+mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT/usr/X11R6/bin
 
-install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Editors
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Editors
 
-gzip -9nf doc/{*.txt,README} README changes.txt \
+gzip -9nf README changes.txt \
 	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
@@ -140,20 +143,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc README.gz changes.txt.gz
+%doc README.gz changes.txt.gz
 %docdir %{_libdir}/jed/info
 %{_mandir}/man1/jed.1*
 %attr(755,root,root) %{_bindir}/jed
 %dir %{_libdir}/jed
-%dir %{_libdir}/jed/info
-%dir %{_libdir}/jed/lib
-%{_libdir}/jed/info/*
-%{_libdir}/jed/lib/*
+%{_libdir}/jed/info
+%{_libdir}/jed/lib
+%{_libdir}/jed/doc
 
 %files xjed
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/X11R6/bin/xjed
-/usr/X11R6/share/applnk/Editors/xjed.desktop
+%{_applnkdir}/Editors/xjed.desktop
 
 %files -n rgrep
 %defattr(644,root,root,755)
