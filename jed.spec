@@ -136,21 +136,27 @@ mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT/usr/X11R6/bin
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Editors
 
 gzip -9nf README changes.txt \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
+	$RPM_BUILD_ROOT%{_mandir}/man1/* \
+	$RPM_BUILD_ROOT%{_infodir}/*
+
+%post
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz changes.txt.gz
+%doc README.gz changes.txt.gz doc/*.gz
 %docdir %{_libdir}/jed/info
 %{_mandir}/man1/jed.1*
 %attr(755,root,root) %{_bindir}/jed
 %dir %{_libdir}/jed
-%{_libdir}/jed/info
+%{_infodir}/jed.info*.gz
 %{_libdir}/jed/lib
-%{_libdir}/jed/doc
 
 %files xjed
 %defattr(644,root,root,755)
