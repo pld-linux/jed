@@ -1,5 +1,5 @@
---- ./src/Makefile.in.orig	Fri Jul 13 20:36:44 2001
-+++ ./src/Makefile.in	Fri Jul 13 20:51:44 2001
+--- jed-B0.99-15/src/Makefile.in.orig	Mon Oct  8 06:48:16 2001
++++ jed-B0.99-15/src/Makefile.in	Tue Apr 23 16:02:39 2002
 @@ -14,9 +14,11 @@
  exec_prefix = @exec_prefix@
  #JED_ROOT = $(HOME)/src/jed# <--- make sure # is at end of file!!
@@ -26,11 +26,11 @@
  #---------------------------------------------------------------------------
  # 1. Linux GPM Mouse support
  #    Uncomment next FOUR lines for GPM mouse support
--#MOUSEFLAGS = -DUSE_GPM_MOUSE
+-#MOUSEFLAGS = -DHAS_GPM_MOUSE
 -#MOUSELIB = -lgpm
 -#GPMMOUSEO = gpmmouse.o
 -#OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
-+MOUSEFLAGS = -DUSE_GPM_MOUSE
++MOUSEFLAGS = -DHAS_GPM_MOUSE
 +MOUSELIB = -lgpm
 +GPMMOUSEO = gpmmouse.o
 +OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
