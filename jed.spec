@@ -124,9 +124,14 @@ sürümü.
 #%patch2 -p1
 %patch3 -p1
 
+mv autoconf/configure.in .
+mv autoconf/aclocal.m4 acinclude.m4
+
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
-%configure2_13
+aclocal
+autoconf
+%configure
 
 %{__make} all
 %{__make} xjed
