@@ -19,9 +19,11 @@ Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
 patch3:		%{name}-info.patch
-Buildrequires:	gpm-devel
-Buildrequires:	slang-devel
-Buildrequires:	XFree86-devel
+BuildRequires:	gpm-devel
+BuildRequires:	slang-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -88,7 +90,7 @@ Jed metin düzenleyicinin X altýnda çalýþan sürümü
 %package -n rgrep
 Summary:	recursive grep utility
 Summary(de):	Rekursives grep-Utility-Programm
-Summary(fr):	Utilitaire grep récursif.
+Summary(fr):	Utilitaire grep récursif
 Summary(pl):	Rekursywna wersja narzêdzia grep
 Summary(tr):	Rekürsif bir grep sürümü
 Group:		Applications/Text
