@@ -1,4 +1,4 @@
-%define		jed_ver	B0.99-14
+%define		tar_ver	B0.99-14
 Summary:	A small fast editor
 Summary(de):	Ein kleiner, schneller Editor
 Summary(fr):	Un petit éditeur rapide
@@ -9,7 +9,7 @@ Version:	0.99.14
 Release:	3
 License:	GPL
 Group:		Applications/Editors
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{%{name}_ver}.tar.bz2
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
@@ -113,7 +113,7 @@ Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
 
 %prep
-%setup -q -n %{name}-%{jed_ver}
+%setup -q -n %{name}-%{tar_ver}
 %patch0 -p1
 %patch1 -p1
 #%patch2 -p1
