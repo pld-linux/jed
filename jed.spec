@@ -119,7 +119,7 @@ install -d $RPM_BUILD_ROOT/{/etc/X11/wmconfig,usr/{bin,man/man1,lib/jed,X11R6/bi
 cp -r lib $RPM_BUILD_ROOT%{_libdir}/jed
 cp -r info $RPM_BUILD_ROOT%{_libdir}/jed
 
-install -s src/objs/{jed,rgrep} $RPM_BUILD_ROOT/usr/bin
+install -s src/objs/{jed,rgrep} $RPM_BUILD_ROOT%{_bindir}
 install -s src/objs/xjed $RPM_BUILD_ROOT/usr/X11R6/bin
 
 install doc/{jed.1,rgrep.1} $RPM_BUILD_ROOT%{_mandir}/man1
@@ -134,7 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc README changes.txt
 %docdir %{_libdir}/jed/info
 %{_mandir}/man1/jed.1
-%attr(755, root, root) /usr/bin/jed
+%attr(755, root, root) %{_bindir}/jed
 %dir %{_libdir}/jed
 %dir %{_libdir}/jed/info
 %dir %{_libdir}/jed/lib
@@ -146,7 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root, root) %config(missingok) /etc/X11/wmconfig/xjed
 
 %files -n rgrep
-%attr(755, root, root) /usr/bin/rgrep
+%attr(755, root, root) %{_bindir}/rgrep
 %{_mandir}/man1/rgrep.1
 
 %changelog
