@@ -5,7 +5,7 @@ Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
 Version:	0.99.10
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Editors
 Group(pt):	X11/Aplicações/Editores
@@ -132,13 +132,13 @@ make xjed
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_applnkdir}/Editors}
+install -d $RPM_BUILD_ROOT{%{_prefix}/X11R6/bin,%{_applnkdir}/Development/Editors}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-mv	$RPM_BUILD_ROOT%{_bindir}/xjed	$RPM_BUILD_ROOT%{_prefix}/X11R6/bin
+mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
-install %{SOURCE1}			$RPM_BUILD_ROOT%{_applnkdir}/Editors
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
 
 gzip -9nf README changes.txt doc/*.txt \
 	$RPM_BUILD_ROOT%{_mandir}/man1/* \
@@ -164,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 %files xjed
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_prefix}/X11R6/bin/xjed
-%{_applnkdir}/Editors/xjed.desktop
+%{_applnkdir}/Development/Editors/xjed.desktop
 
 %files -n rgrep
 %defattr(644,root,root,755)
