@@ -18,9 +18,7 @@ Patch3:		jed-keymap.patch
 Buildrequires:	gpm-devel
 Buildrequires:	slang-devel
 Buildrequires:	XFree86-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
-
-%define		_applnkdir	/usr/X11R6/share/applnk/
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Jed is a fast compact editor based on the slang screen library. It has
