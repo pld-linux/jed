@@ -76,7 +76,7 @@ Summary(de): Rekursives grep-Utility-Programm
 Summary(fr): Utilitaire grep récursif.
 Summary(pl): Rekursywna wersja narzêdzie grep
 Summary(tr): Rekürsif bir grep sürümü
-Group:       Utilities
+Group:       Utilities/Text
 
 %description -n rgrep
 a recursive `grep' utility that can highlight the matching expression,
@@ -159,6 +159,7 @@ rm -rf $RPM_BUILD_ROOT
 - added LDFLAGS=-s (for dynamic linking with slang),
 - added patch for enable by default highlight syntax,
 - removed not neccesary now patches,
+- changed Group in rgrep to Utilities/Text,
 - added %defattr and %attr macros in %files (allows building package from
   non-root account).
 
