@@ -148,34 +148,3 @@ rm -rf $RPM_BUILD_ROOT
 %files -n rgrep
 %attr(755,root,root) %{_bindir}/rgrep
 %{_mandir}/man1/rgrep.1
-
-%changelog
-* Wed Jun 17 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.98.7-1]
-- added -q %setup parameter,
-- added using %%{name} macro in Source,
-- spec file rewritten for using Buildroot,
-- added %clean section,
-- added pl translation,
-- added LDFLAGS=-s (for dynamic linking with slang),
-- added patch for enable by default highlight syntax,
-- removed not neccesary now patches,
-- changed Group in rgrep to Utilities/Text,
-- added %defattr and %attr macros in %files (allows building package from
-  non-root account).
-
-* Thu May 07 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Wed Apr 15 1998 Erik Troan <ewt@redhat.com>
-- built against new ncurses
-
-* Mon Nov  3 1997 Michael Fulbright <msf@redhat.com>
-- added wmconfig entry for xjed
-
-* Tue Oct 21 1997 Michael Fulbright <msf@redhat.com>
-- updated to 0.98.4
-- included man pages in file lists
-
-* Thu Jul 10 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
