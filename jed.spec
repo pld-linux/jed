@@ -4,7 +4,7 @@ Summary(fr):	Un petit éditeur rapide
 Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
-Version:	0.99.6
+Version:	0.99.8
 Release:	1
 Copyright:	GPL
 Group:		Applications/Editors
@@ -100,7 +100,7 @@ Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
 
 %prep
-%setup -q -n %{name}-B0.99-6
+%setup -q -n %{name}-B0.99-8
 %patch0 -p1
 %patch1 -p1
 
