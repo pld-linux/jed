@@ -1,6 +1,7 @@
 Summary:     A small fast editor
 Summary(de): Ein kleiner, schneller Editor 
 Summary(fr): Un petit éditeur rapide
+Summary(pl): Ma³y i szybki edytor
 Summary(tr): Küçük, hýzlý bir metin düzenleyici
 Name:        jed
 Version:     0.98.7
@@ -11,6 +12,7 @@ Source0:     ftp://space.mit.edu/pub/davis/jed/%{name}0.98-7.tar.gz
 Source1:     xjed.wmconfig
 Patch0:      jed-make.patch
 Patch1:      jed-XFree86_keys.patch
+Patch2:      jed-dft_syntax.patch
 Buildroot:   /tmp/%{name}-%{version}-root
 
 %description
@@ -31,6 +33,13 @@ modes d'édition spéciaux pour C, C++, et d'autres langages. Il peut
 émuler Emacs, Wordstar, et d'autres éditeurs, et peut être personnalisé
 avec des macros slang, des couleurs, des combinaisons de touches, etc.
 
+%description -l pl
+Jed jest niewielkim i szybkim edytorem bazuj±cym na bibliotece slang.
+Ma on specjalne tryby edycji tekstów jezykach C, C++ i innych. Mo¿e on
+tak¿e emulowaæ inne edytory jak Emacs, Wordstar i inne. Mo¿e byæ on w pe³ni
+dostosowany do potrzeb u¿ytkownika z u¿yciem makr slanga daj±c mo¿liwo¶æ
+zmiany np. kolorów czy mapowania klawiatury itp.
+
 %description -l tr
 Jed, küçük ve hýzlý bir metin düzenleyicidir. C, C++ ve diðer diller için özel
 düzenleme kiplerine sahiptir. Emacs ve Wordstar'ýn komutlarýný taklit edebilir
@@ -40,6 +49,7 @@ ve tüm yetenekleri kullanýcýya göre ayarlanabilir.
 Summary:     Jed editor - X version
 Summary(de): Jed-Editor - X-Version 
 Summary(fr): Éditeur Jed - version X
+Summary(pl): Edytor jed - wersja pod X Window
 Summary(tr): Jed metin düzenleyici - X sürümü
 Group:       Applications/Editors
 Requires:    %{name} = %{version}
@@ -47,20 +57,24 @@ Requires:    %{name} = %{version}
 %description xjed
 Xjed is the same editor as jed, it just runs in its own X Window.
 
-%description -l fr xjed
-Xjed est le même éditeur que jed, il tourne seulement sur X Window.
-
-%description -l tr xjed
-Jed metin düzenleyicinin X altýnda çalýþan sürümü
-
 %description -l de xjed
 Xjed ist der gleiche Editor wie jed, läuft jedoch in einem eigenen 
 X-Window
+
+%description -l fr xjed
+Xjed est le même éditeur que jed, il tourne seulement sur X Window.
+
+%description -l pl xjed
+Xjed jest wersj± pracuj±c± po X Window edytora jed.
+
+%description -l tr xjed
+Jed metin düzenleyicinin X altýnda çalýþan sürümü
 
 %package -n rgrep
 Summary:     recursive grep utility
 Summary(de): Rekursives grep-Utility-Programm
 Summary(fr): Utilitaire grep récursif.
+Summary(pl): Rekursywna wersja narzêdzie grep
 Summary(tr): Rekürsif bir grep sürümü
 Group:       Utilities
 
@@ -76,6 +90,11 @@ markieren kann. Vom Autor von Jed.
 grep récursif pouvant mettre en évidence l'expression trouvée, par
 l'auteur de Jed.
 
+%description -l pl -n rgrep
+rgrep jest programem, które mo¿e zaznaczaæ poszukiwane ci±gi znaków w
+bierz±cym katalogu i podkatalogach ³acz±cym w sobie cechy funkcjonalne
+u¿ywania pary programów find i grep.
+
 %description -l tr -n rgrep
 Jed'in yazarýndan rekürsif bulduðu eþlemeleri iþaretleyebilen bir grep
 sürümü.
@@ -86,7 +105,6 @@ sürümü.
 %patch1 -p1
 
 %build
-default_jed_root=/usr/lib \
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr $RPM_OPT_FLAGS" \
 LDFLAGS=-s \
 ./configure --prefix=/usr
@@ -132,12 +150,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Wed Jun 17 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0-2]
+  [0.98.7-1]
 - added -q %setup parameter,
 - added using %%{name} macro in Source,
 - spec file rewritten for using Buildroot,
 - added %clean section,
+- added pl translation,
 - added LDFLAGS=-s (for dynamic linking with slang),
+- added patch for enable by default highlight syntax,
 - removed not neccesary now patches,
 - added %defattr and %attr macros in %files (allows building package from
   non-root account).
