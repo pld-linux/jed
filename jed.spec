@@ -1,11 +1,11 @@
-%define		jed_ver	B0.99-13
+%define		jed_ver	B0.99-14
 Summary:	A small fast editor
 Summary(de):	Ein kleiner, schneller Editor 
 Summary(fr):	Un petit éditeur rapide
 Summary(pl):	Ma³y i szybki edytor
 Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Name:		jed
-Version:	0.99.13
+Version:	0.99.14
 Release:	1
 License:	GPL
 Group:		Applications/Editors
@@ -121,12 +121,12 @@ sürümü.
 %setup -q -n %{name}-%{jed_ver}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 %patch3 -p1
 
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
-%configure
+%configure2_13
 
 %{__make} all
 %{__make} xjed
