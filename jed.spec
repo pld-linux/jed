@@ -149,7 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz changes.txt.gz doc/*.gz
+%doc README.gz changes.txt.gz doc/txt/*.gz
 %attr(755,root,root) %{_bindir}/jed
 %{_datadir}/jed
 %{_mandir}/man1/jed.*
