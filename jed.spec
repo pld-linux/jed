@@ -110,7 +110,7 @@ l'auteur de Jed.
 
 %description -l pl -n rgrep
 rgrep jest programem, który mo¿e zaznaczaæ poszukiwane ci±gi znaków w
-bierz±cym katalogu i podkatalogach ³acz±cym w sobie cechy funkcjonalne
+bie¿±cym katalogu i podkatalogach ³acz±cym w sobie cechy funkcjonalne
 u¿ywania pary programów find i grep.
 
 %description -l tr -n rgrep
@@ -124,8 +124,8 @@ sürümü.
 #%patch2 -p1
 %patch3 -p1
 
-mv autoconf/configure.in .
-mv autoconf/aclocal.m4 acinclude.m4
+mv -f autoconf/configure.in .
+mv -f autoconf/aclocal.m4 acinclude.m4
 
 %build
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
@@ -151,14 +151,14 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
 
 gzip -9nf README changes.txt doc/txt/*.txt
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
