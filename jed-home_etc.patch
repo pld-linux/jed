@@ -1,0 +1,42 @@
+diff -ruN jed-B0.99-10.orig/lib/site.sl jed-B0.99-10/lib/site.sl
+--- jed-B0.99-10.orig/lib/site.sl	Sun Nov 14 07:35:41 1999
++++ jed-B0.99-10/lib/site.sl	Mon Apr 10 13:42:21 2000
+@@ -2434,17 +2434,30 @@
+         file = getenv ("JED_HOME");
+ 	if (file == NULL)
+ 	  {
+-	     file = getenv("HOME");
+-	     if (file == NULL) file = "";
++	     file = getenv("CONFIG_DIR");
++	     if (file == NULL)
++	       {
++	          file = getenv("HOME");
++		  if (file == NULL)
++		     file ="";
++
++		  file = dircat (file,".jedrc");
++	       }
++	     else
++	       {
++	          if (strncmp(getenv("CONFIG_DIR"), "/",0))
++		     file = sprintf("%s/jed",getenv("CONFIG_DIR"));
++		  else
++		     file = sprintf("%s/%s/jed",getenv("HOME"),getenv("CONFIG_DIR"));
++
++		  file = dircat (file,"jedrc");
++	       }
+ 	  }
+ #endif
+-	file = dircat (file, 
+-#ifdef UNIX
+-		       ".jedrc"
+-#else
+-		       "jed.rc"
++
++#ifndef UNIX
++	file = dircat (file,"jed.rc");
+ #endif
+-		       );
+ 
+ 	if (file_status (file) != 1) 
+ 	  {
