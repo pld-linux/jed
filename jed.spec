@@ -163,7 +163,7 @@ l'auteur de Jed.
 
 %description -n rgrep -l pl
 rgrep jest programem, który mo¿e zaznaczaæ poszukiwane ci±gi znaków w
-bie¿±cym katalogu i podkatalogach ³acz±cym w sobie cechy funkcjonalne
+bie¿±cym katalogu i podkatalogach ³±cz±cym w sobie cechy funkcjonalne
 u¿ywania pary programów find i grep.
 
 %description -n rgrep -l pt_BR
