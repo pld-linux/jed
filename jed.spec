@@ -125,8 +125,7 @@ sürümü.
 %patch3 -p1
 
 %build
-CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr \
-	%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}"
+CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 %configure
 
 %{__make} all
@@ -140,7 +139,7 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors \
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install info/jed.* $RPM_BUILD_ROOT%{_infodir}
 
-mv $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
+mv -f $RPM_BUILD_ROOT%{_bindir}/xjed $RPM_BUILD_ROOT%{_prefix}/X11R6/bin
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
