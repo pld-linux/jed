@@ -9,9 +9,6 @@ Version:	0.99.14
 Release:	3
 License:	GPL
 Group:		Applications/Editors
-Group(de):	Applikationen/Editors
-Group(pl):	Aplikacje/Edytory
-Group(pt):	Aplicações/Editores
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{jed_ver}.tar.bz2
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
@@ -68,9 +65,6 @@ Summary(fr):	Éditeur Jed - version X
 Summary(pl):	Edytor jed - wersja dla X Window
 Summary(tr):	Jed metin düzenleyici - X sürümü
 Group:		X11/Applications/Editors
-Group(de):	X11/Applikationen/Editors
-Group(pl):	X11/Aplikacje/Edytory
-Group(pt):	X11/Aplicações/Editores
 Requires:	%{name} = %{version}
 
 %description xjed
@@ -96,9 +90,6 @@ Summary(fr):	Utilitaire grep récursif
 Summary(pl):	Rekursywna wersja narzêdzia grep
 Summary(tr):	Rekürsif bir grep sürümü
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Utilitaires/Texte
-Group(pl):	Aplikacje/Tekst
 
 %description -n rgrep
 a recursive `grep' utility that can highlight the matching expression,
