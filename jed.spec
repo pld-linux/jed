@@ -36,10 +36,10 @@ slang, des couleurs, des combinaisons de touches, etc.
 
 %description -l pl
 Jed jest niewielkim i szybkim edytorem bazuj±cym na bibliotece slang. Ma on
-specjalne tryby edycji tekstów jezykach C, C++ i innych. Mo¿e on tak¿e
-emulowaæ inne edytory jak Emacs, Wordstar i inne. Mo¿e byæ on w pe³ni
+specjalne tryby edycji tekstów w jêzykach C, C++ i innych. Mo¿e on tak¿e
+emulowaæ inne edytory jak Emacs czy Wordstar. Mo¿e byæ on w pe³ni
 dostosowany do potrzeb u¿ytkownika z u¿yciem makr slanga daj±c mo¿liwo¶æ
-zmiany np. kolorów czy mapowania klawiatury itp.
+zmiany np. kolorów czy mapowania klawiatury.
 
 %description -l tr
 Jed, küçük ve hýzlý bir metin düzenleyicidir. C, C++ ve diðer diller için özel
@@ -50,7 +50,7 @@ ve tüm yetenekleri kullanýcýya göre ayarlanabilir.
 Summary:	Jed editor - X version
 Summary(de):	Jed-Editor - X-Version 
 Summary(fr):	Éditeur Jed - version X
-Summary(pl):	Edytor jed - wersja pod X Window
+Summary(pl):	Edytor jed - wersja dla X Window
 Summary(tr):	Jed metin düzenleyici - X sürümü
 Group:		X11/Applications/Editors
 Group(pl):	X11/Aplikacje/Edytory
@@ -66,7 +66,7 @@ Xjed ist der gleiche Editor wie jed, läuft jedoch in einem eigenen X-Window
 Xjed est le même éditeur que jed, il tourne seulement sur X Window.
 
 %description -l pl xjed
-Xjed jest wersj± pracuj±c± po X Window edytora jed.
+Xjed jest wersj± edytora jed pracuj±c± w X Window.
 
 %description -l tr xjed
 Jed metin düzenleyicinin X altýnda çalýþan sürümü
@@ -75,7 +75,7 @@ Jed metin düzenleyicinin X altýnda çalýþan sürümü
 Summary:	recursive grep utility
 Summary(de):	Rekursives grep-Utility-Programm
 Summary(fr):	Utilitaire grep récursif.
-Summary(pl):	Rekursywna wersja narzêdzie grep
+Summary(pl):	Rekursywna wersja narzêdzia grep
 Summary(tr):	Rekürsif bir grep sürümü
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
@@ -93,7 +93,7 @@ grep récursif pouvant mettre en évidence l'expression trouvée, par l'auteur
 de Jed.
 
 %description -l pl -n rgrep
-rgrep jest programem, które mo¿e zaznaczaæ poszukiwane ci±gi znaków w
+rgrep jest programem, który mo¿e zaznaczaæ poszukiwane ci±gi znaków w
 bierz±cym katalogu i podkatalogach ³acz±cym w sobie cechy funkcjonalne
 u¿ywania pary programów find i grep.
 
