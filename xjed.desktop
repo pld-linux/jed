@@ -2,6 +2,7 @@
 Name=Xjed
 Comment=Xjed Editor
 Comment[pl]=Edytor xjed
+Icon=xjed.png
 Exec=xjed
 Terminal=0
 Type=Application
