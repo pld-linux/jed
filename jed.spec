@@ -18,9 +18,9 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Jed is a fast compact editor based on the slang screen library. It has
-special editing modes for C, C++, and other languages.  It can emulate
-Emacs, Wordstar, and other editors, and can be customized with slang
-macros, colors, keybindings, etc.
+special editing modes for C, C++, and other languages. It can emulate Emacs,
+Wordstar, and other editors, and can be customized with slang macros,
+colors, keybindings, etc.
 
 %description -l de
 Jed ist ein schneller, kompakter Editor, der auf der Slang-Screen-Library
@@ -29,15 +29,15 @@ kann Emacs, Wordstar und weitere Editoren emulieren und läßt sich mit
 Slang-Makros, Farben, Keybindings usw. erweitern.
 
 %description -l fr
-Jed est un éditeur compact basé sur la librairie slang. Il dispose de 
-modes d'édition spéciaux pour C, C++, et d'autres langages. Il peut
-émuler Emacs, Wordstar, et d'autres éditeurs, et peut être personnalisé
-avec des macros slang, des couleurs, des combinaisons de touches, etc.
+Jed est un éditeur compact basé sur la librairie slang. Il dispose de modes
+d'édition spéciaux pour C, C++, et d'autres langages. Il peut émuler Emacs,
+Wordstar, et d'autres éditeurs, et peut être personnalisé avec des macros
+slang, des couleurs, des combinaisons de touches, etc.
 
 %description -l pl
-Jed jest niewielkim i szybkim edytorem bazuj±cym na bibliotece slang.
-Ma on specjalne tryby edycji tekstów jezykach C, C++ i innych. Mo¿e on
-tak¿e emulowaæ inne edytory jak Emacs, Wordstar i inne. Mo¿e byæ on w pe³ni
+Jed jest niewielkim i szybkim edytorem bazuj±cym na bibliotece slang. Ma on
+specjalne tryby edycji tekstów jezykach C, C++ i innych. Mo¿e on tak¿e
+emulowaæ inne edytory jak Emacs, Wordstar i inne. Mo¿e byæ on w pe³ni
 dostosowany do potrzeb u¿ytkownika z u¿yciem makr slanga daj±c mo¿liwo¶æ
 zmiany np. kolorów czy mapowania klawiatury itp.
 
@@ -60,8 +60,7 @@ Requires:	%{name} = %{version}
 Xjed is the same editor as jed, it just runs in its own X Window.
 
 %description -l de xjed
-Xjed ist der gleiche Editor wie jed, läuft jedoch in einem eigenen 
-X-Window
+Xjed ist der gleiche Editor wie jed, läuft jedoch in einem eigenen X-Window
 
 %description -l fr xjed
 Xjed est le même éditeur que jed, il tourne seulement sur X Window.
@@ -86,12 +85,12 @@ a recursive `grep' utility that can highlight the matching expression,
 by the author of Jed.
 
 %description -l de -n rgrep
-ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
-markieren kann. Vom Autor von Jed.
+ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck markieren
+kann. Vom Autor von Jed.
 
 %description -l fr -n rgrep
-grep récursif pouvant mettre en évidence l'expression trouvée, par
-l'auteur de Jed.
+grep récursif pouvant mettre en évidence l'expression trouvée, par l'auteur
+de Jed.
 
 %description -l pl -n rgrep
 rgrep jest programem, które mo¿e zaznaczaæ poszukiwane ci±gi znaków w
