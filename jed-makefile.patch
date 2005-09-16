@@ -1,11 +1,11 @@
---- jed-0.99-16/src/Makefile.in.orig	2002-10-20 08:55:30.000000000 +0200
-+++ jed-0.99-16/src/Makefile.in	2003-11-25 23:48:06.000000000 +0100
-@@ -14,9 +14,11 @@
+diff -urN jed-B0.99-17.111.org/src/Makefile.in jed-B0.99-17.111/src/Makefile.in
+--- jed-B0.99-17.111.org/src/Makefile.in	2005-07-25 06:37:23.000000000 +0200
++++ jed-B0.99-17.111/src/Makefile.in	2005-09-16 09:53:34.576743488 +0200
+@@ -14,9 +14,10 @@
  exec_prefix = @exec_prefix@
  #JED_ROOT = $(HOME)/src/jed# <--- make sure # is at end of file!!
  #JED_ROOT = $(prefix)/jed# <--- make sure # is at end of file!!
 -JED_ROOT = @JED_ROOT@# <--- make sure # is at end of file!!
-+#JED_ROOT = @JED_ROOT@# <--- make sure # is at end of file!!
 +JED_ROOT = @datadir@/jed# <--- make sure # is at end of file!!
  BIN_DIR = @bindir@
  MAN_DIR = @mandir@/man1
@@ -13,15 +13,15 @@
  INSTALL		= @INSTALL@
  INSTALL_DATA	= @INSTALL_DATA@
  MKINSDIR = ../autoconf/mkinsdir.sh
-@@ -51,10 +53,10 @@
+@@ -51,10 +52,10 @@
  #---------------------------------------------------------------------------
  # 1. Linux GPM Mouse support
  #    Uncomment next FOUR lines for GPM mouse support
--#MOUSEFLAGS = -DHAS_GPM_MOUSE
+-#MOUSEFLAGS = -DUSE_GPM_MOUSE
 -#MOUSELIB = -lgpm
 -#GPMMOUSEO = gpmmouse.o
 -#OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
-+MOUSEFLAGS = -DHAS_GPM_MOUSE
++MOUSEFLAGS = -DUSE_GPM_MOUSE
 +MOUSELIB = -lgpm
 +GPMMOUSEO = gpmmouse.o
 +OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
