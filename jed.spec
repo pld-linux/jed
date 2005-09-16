@@ -10,7 +10,7 @@ Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
 Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
 Name:		jed
 Version:	0.99.17
-Release:	0.111.1
+Release:	0.111.2
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/pre-0.99-17/%{name}-%{tar_ver}.tar.bz2
