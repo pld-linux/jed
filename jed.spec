@@ -10,7 +10,7 @@ Summary(tr):	Küçük, hýzlý bir metin düzenleyici
 Summary(uk):	û×ÉÄËÉÊ ËÏÍÐÁËÔÎÉÊ ÔÅËÓÔÏ×ÉÊ ÒÅÄÁËÔÏÒ ÎÁ ÂÁÚ¦ Â¦ÂÌ¦ÏÔÅËÉ slang
 Name:		jed
 Version:	0.99.16
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Editors
 Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
@@ -29,7 +29,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gpm-devel
-BuildRequires:	slang-devel
+BuildRequires:	slang-devel >= 2.0.0
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
