@@ -1,4 +1,4 @@
-%define		tar_ver	0.99-16
+%define		tar_ver	B0.99-17.111
 Summary:	A small fast editor
 Summary(de):	Ein kleiner, schneller Editor
 Summary(es):	Un pequeЯo y rАpido editor
@@ -9,12 +9,12 @@ Summary(ru):	Быстрый небольшой текстовый редактор на основе библиотеки slang
 Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
 Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
 Name:		jed
-Version:	0.99.16
-Release:	4
+Version:	0.99.17
+Release:	0.111.1
 License:	GPL
 Group:		Applications/Editors
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
-# Source0-md5:	c2bcd89c92a120559865a539c2705999
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/pre-0.99-17/%{name}-%{tar_ver}.tar.bz2
+# Source0-md5:	1a0c3d3b19d12e920e37754cd06d06db
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
@@ -190,7 +190,7 @@ sЭrЭmЭ.
 %patch4 -p1
 
 %build
-mv -f autoconf/configure.in .
+mv -f autoconf/configure.ac .
 mv -f autoconf/aclocal.m4 acinclude.m4
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 %{__aclocal}
@@ -199,6 +199,7 @@ CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 
 %{__make} all
 %{__make} xjed
+%{__make} rgrep
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -209,6 +210,7 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install src/objs/rgrep $RPM_BUILD_ROOT%{_bindir}
 install info/jed.* $RPM_BUILD_ROOT%{_infodir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
