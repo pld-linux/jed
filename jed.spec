@@ -190,6 +190,7 @@ sürümü.
 %patch4 -p1
 
 %build
+install /usr/share/automake/config.* autoconf
 mv -f autoconf/configure.ac .
 mv -f autoconf/aclocal.m4 acinclude.m4
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
