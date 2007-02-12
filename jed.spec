@@ -1,13 +1,13 @@
 %define		tar_ver	B0.99-17.111
 Summary:	A small fast editor
-Summary(de):	Ein kleiner, schneller Editor
-Summary(es):	Un pequeЯo y rАpido editor
-Summary(fr):	Un petit Иditeur rapide
-Summary(pl):	MaЁy i szybki edytor
-Summary(pt_BR):	Um pequeno e rАpido editor
-Summary(ru):	Быстрый небольшой текстовый редактор на основе библиотеки slang
-Summary(tr):	KЭГЭk, hЩzlЩ bir metin dЭzenleyici
-Summary(uk):	Швидкий компактний текстовий редактор на баз╕ б╕бл╕отеки slang
+Summary(de.UTF-8):   Ein kleiner, schneller Editor
+Summary(es.UTF-8):   Un pequeц╠o y rц║pido editor
+Summary(fr.UTF-8):   Un petit ц╘diteur rapide
+Summary(pl.UTF-8):   Maе┌y i szybki edytor
+Summary(pt_BR.UTF-8):   Um pequeno e rц║pido editor
+Summary(ru.UTF-8):   п▒я▀я│я┌я─я▀п╧ п╫п╣п╠п╬п╩я▄я┬п╬п╧ я┌п╣п╨я│я┌п╬п╡я▀п╧ я─п╣п╢п╟п╨я┌п╬я─ п╫п╟ п╬я│п╫п╬п╡п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ slang
+Summary(tr.UTF-8):   Kц╪ц╖ц╪k, hд╠zlд╠ bir metin dц╪zenleyici
+Summary(uk.UTF-8):   п╗п╡п╦п╢п╨п╦п╧ п╨п╬п╪п©п╟п╨я┌п╫п╦п╧ я┌п╣п╨я│я┌п╬п╡п╦п╧ я─п╣п╢п╟п╨я┌п╬я─ п╫п╟ п╠п╟п╥я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ slang
 Name:		jed
 Version:	0.99.17
 Release:	0.111.2
@@ -39,147 +39,147 @@ special editing modes for C, C++, and other languages. It can emulate
 Emacs, Wordstar, and other editors, and can be customized with slang
 macros, colors, keybindings, etc.
 
-%description -l de
+%description -l de.UTF-8
 Jed ist ein schneller, kompakter Editor, der auf der
 Slang-Screen-Library basiert. Er besitzt spezielle Bearbeitungsmodi
-fЭr C, C++ und andere Sprachen, kann Emacs, Wordstar und weitere
-Editoren emulieren und lДъt sich mit Slang-Makros, Farben, Keybindings
+fц╪r C, C++ und andere Sprachen, kann Emacs, Wordstar und weitere
+Editoren emulieren und lц╓ц÷t sich mit Slang-Makros, Farben, Keybindings
 usw. erweitern.
 
-%description -l es
-Jed es un editor compacto y rАpido basado en la biblioteca slang.
-Tiene modos de ediciСn especiales para C, C++ y otros lenguajes. Puede
+%description -l es.UTF-8
+Jed es un editor compacto y rц║pido basado en la biblioteca slang.
+Tiene modos de ediciцЁn especiales para C, C++ y otros lenguajes. Puede
 emular Emacs, Wordstar y otros editores, y se lo puede configurar con
 macros slang, color, mapas de teclas, etc.
 
-%description -l fr
-Jed est un Иditeur compact basИ sur la librairie slang. Il dispose de
-modes d'Иdition spИciaux pour C, C++, et d'autres langages. Il peut
-Иmuler Emacs, Wordstar, et d'autres Иditeurs, et peut Йtre
-personnalisИ avec des macros slang, des couleurs, des combinaisons de
+%description -l fr.UTF-8
+Jed est un ц╘diteur compact basц╘ sur la librairie slang. Il dispose de
+modes d'ц╘dition spц╘ciaux pour C, C++, et d'autres langages. Il peut
+ц╘muler Emacs, Wordstar, et d'autres ц╘diteurs, et peut ц╙tre
+personnalisц╘ avec des macros slang, des couleurs, des combinaisons de
 touches, etc.
 
-%description -l pl
-Jed jest niewielkim i szybkim edytorem bazuj╠cym na bibliotece slang.
-Ma on specjalne tryby edycji tekstСw w jЙzykach C, C++ i innych. Mo©e
-on tak©e emulowaФ inne edytory jak Emacs czy Wordstar. Mo©e byФ on w
-peЁni dostosowany do potrzeb u©ytkownika z u©yciem makr slanga daj╠c
-mo©liwo╤Ф zmiany np. kolorСw czy mapowania klawiatury.
+%description -l pl.UTF-8
+Jed jest niewielkim i szybkim edytorem bazujд┘cym na bibliotece slang.
+Ma on specjalne tryby edycji tekstцЁw w jд≥zykach C, C++ i innych. Moе╪e
+on takе╪e emulowaд┤ inne edytory jak Emacs czy Wordstar. Moе╪e byд┤ on w
+peе┌ni dostosowany do potrzeb uе╪ytkownika z uе╪yciem makr slanga dajд┘c
+moе╪liwoе⌡д┤ zmiany np. kolorцЁw czy mapowania klawiatury.
 
-%description -l ru
-Jed - это быстрый компактный текстовый редактор, основанный на
-экранной библиотеке SLang. Он имеет специальные режимы редактирования
-для C, C++, и других языков. Jed может эмулировать Emacs, Wordstar и
-другие редакторы и может быть настроен для конкретных условий
-используя макросы, цвета, привязки клавиатуры и т.п. из SLang.
+%description -l ru.UTF-8
+Jed - я█я┌п╬ п╠я▀я│я┌я─я▀п╧ п╨п╬п╪п©п╟п╨я┌п╫я▀п╧ я┌п╣п╨я│я┌п╬п╡я▀п╧ я─п╣п╢п╟п╨я┌п╬я─, п╬я│п╫п╬п╡п╟п╫п╫я▀п╧ п╫п╟
+я█п╨я─п╟п╫п╫п╬п╧ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╣ SLang. п·п╫ п╦п╪п╣п╣я┌ я│п©п╣я├п╦п╟п╩я▄п╫я▀п╣ я─п╣п╤п╦п╪я▀ я─п╣п╢п╟п╨я┌п╦я─п╬п╡п╟п╫п╦я▐
+п╢п╩я▐ C, C++, п╦ п╢я─я┐пЁп╦я┘ я▐п╥я▀п╨п╬п╡. Jed п╪п╬п╤п╣я┌ я█п╪я┐п╩п╦я─п╬п╡п╟я┌я▄ Emacs, Wordstar п╦
+п╢я─я┐пЁп╦п╣ я─п╣п╢п╟п╨я┌п╬я─я▀ п╦ п╪п╬п╤п╣я┌ п╠я▀я┌я▄ п╫п╟я│я┌я─п╬п╣п╫ п╢п╩я▐ п╨п╬п╫п╨я─п╣я┌п╫я▀я┘ я┐я│п╩п╬п╡п╦п╧
+п╦я│п©п╬п╩я▄п╥я┐я▐ п╪п╟п╨я─п╬я│я▀, я├п╡п╣я┌п╟, п©я─п╦п╡я▐п╥п╨п╦ п╨п╩п╟п╡п╦п╟я┌я┐я─я▀ п╦ я┌.п©. п╦п╥ SLang.
 
-%description -l pt_BR
-Jed И um editor compacto e rАpido baseado na biblioteca slang. Ele tem
-modos de ediГЦo especiais para C, C++ e outras linguagens. Pode emular
+%description -l pt_BR.UTF-8
+Jed ц╘ um editor compacto e rц║pido baseado na biblioteca slang. Ele tem
+modos de ediц╖цёo especiais para C, C++ e outras linguagens. Pode emular
 Emacs, Wordstar e outros editores, podendo ser configurado com macros
 slang, cores, mapeamento de teclas, etc.
 
-%description -l tr
-Jed, kЭГЭk ve hЩzlЩ bir metin dЭzenleyicidir. C, C++ ve diПer diller
-iГin Жzel dЭzenleme kiplerine sahiptir. Emacs ve Wordstar'Щn
-komutlarЩnЩ taklit edebilir ve tЭm yetenekleri kullanЩcЩya gЖre
+%description -l tr.UTF-8
+Jed, kц╪ц╖ц╪k ve hд╠zlд╠ bir metin dц╪zenleyicidir. C, C++ ve diд÷er diller
+iц╖in ц╤zel dц╪zenleme kiplerine sahiptir. Emacs ve Wordstar'д╠n
+komutlarд╠nд╠ taklit edebilir ve tц╪m yetenekleri kullanд╠cд╠ya gц╤re
 ayarlanabilir.
 
-%description -l uk
-Jed - це швидкий компактний текстовий редактор, базований на екранн╕й
-б╕бл╕отец╕ SLang. В╕н ма╓ спец╕альн╕ режими редагування для C, C++ та
-╕нших мов. Jed може емулювати Emacs, Wordstar та ╕нш╕ редактори ╕ може
-бути настро╓ний на р╕вн╕ макрос╕в, кольор╕в, прив'язки клав╕ш ╕ т.п.
+%description -l uk.UTF-8
+Jed - я├п╣ я┬п╡п╦п╢п╨п╦п╧ п╨п╬п╪п©п╟п╨я┌п╫п╦п╧ я┌п╣п╨я│я┌п╬п╡п╦п╧ я─п╣п╢п╟п╨я┌п╬я─, п╠п╟п╥п╬п╡п╟п╫п╦п╧ п╫п╟ п╣п╨я─п╟п╫п╫я√п╧
+п╠я√п╠п╩я√п╬я┌п╣я├я√ SLang. п▓я√п╫ п╪п╟я■ я│п©п╣я├я√п╟п╩я▄п╫я√ я─п╣п╤п╦п╪п╦ я─п╣п╢п╟пЁя┐п╡п╟п╫п╫я▐ п╢п╩я▐ C, C++ я┌п╟
+я√п╫я┬п╦я┘ п╪п╬п╡. Jed п╪п╬п╤п╣ п╣п╪я┐п╩я▌п╡п╟я┌п╦ Emacs, Wordstar я┌п╟ я√п╫я┬я√ я─п╣п╢п╟п╨я┌п╬я─п╦ я√ п╪п╬п╤п╣
+п╠я┐я┌п╦ п╫п╟я│я┌я─п╬я■п╫п╦п╧ п╫п╟ я─я√п╡п╫я√ п╪п╟п╨я─п╬я│я√п╡, п╨п╬п╩я▄п╬я─я√п╡, п©я─п╦п╡'я▐п╥п╨п╦ п╨п╩п╟п╡я√я┬ я√ я┌.п©.
 
 %package xjed
 Summary:	Jed editor - X version
-Summary(de):	Jed-Editor - X-Version
-Summary(es):	Editor Jed - versiСn X
-Summary(fr):	иditeur Jed - version X
-Summary(pl):	Edytor jed - wersja dla X Window
-Summary(pt_BR):	Editor Jed - versЦo X
-Summary(ru):	Редактор Jed - версия для X Window
-Summary(tr):	Jed metin dЭzenleyici - X sЭrЭmЭ
-Summary(uk):	Редактор Jed - верс╕я для X Window
+Summary(de.UTF-8):   Jed-Editor - X-Version
+Summary(es.UTF-8):   Editor Jed - versiцЁn X
+Summary(fr.UTF-8):   ц┴diteur Jed - version X
+Summary(pl.UTF-8):   Edytor jed - wersja dla X Window
+Summary(pt_BR.UTF-8):   Editor Jed - versцёo X
+Summary(ru.UTF-8):   п═п╣п╢п╟п╨я┌п╬я─ Jed - п╡п╣я─я│п╦я▐ п╢п╩я▐ X Window
+Summary(tr.UTF-8):   Jed metin dц╪zenleyici - X sц╪rц╪mц╪
+Summary(uk.UTF-8):   п═п╣п╢п╟п╨я┌п╬я─ Jed - п╡п╣я─я│я√я▐ п╢п╩я▐ X Window
 Group:		X11/Applications/Editors
 Requires:	%{name} = %{version}-%{release}
 
 %description xjed
 Xjed is the same editor as jed, it just runs in its own X Window.
 
-%description xjed -l de
-Xjed ist der gleiche Editor wie jed, lДuft jedoch in einem eigenen
+%description xjed -l de.UTF-8
+Xjed ist der gleiche Editor wie jed, lц╓uft jedoch in einem eigenen
 X-Window
 
-%description xjed -l es
+%description xjed -l es.UTF-8
 Xjed es el editor jed para X Window.
 
-%description xjed -l fr
-Xjed est le mЙme Иditeur que jed, il tourne seulement sur X Window.
+%description xjed -l fr.UTF-8
+Xjed est le mц╙me ц╘diteur que jed, il tourne seulement sur X Window.
 
-%description xjed -l pl
-Xjed jest wersj╠ edytora jed pracuj╠c╠ w X Window.
+%description xjed -l pl.UTF-8
+Xjed jest wersjд┘ edytora jed pracujд┘cд┘ w X Window.
 
-%description xjed -l pt_BR
-Xjed И o editor jed para X Window.
+%description xjed -l pt_BR.UTF-8
+Xjed ц╘ o editor jed para X Window.
 
-%description xjed -l ru
-Xjed - это тот же редактор, что и jed, только работающий в собственном
-X-окне.
+%description xjed -l ru.UTF-8
+Xjed - я█я┌п╬ я┌п╬я┌ п╤п╣ я─п╣п╢п╟п╨я┌п╬я─, я┤я┌п╬ п╦ jed, я┌п╬п╩я▄п╨п╬ я─п╟п╠п╬я┌п╟я▌я┴п╦п╧ п╡ я│п╬п╠я│я┌п╡п╣п╫п╫п╬п╪
+X-п╬п╨п╫п╣.
 
-%description xjed -l tr
-Jed metin dЭzenleyicinin X altЩnda ГalЩЧan sЭrЭmЭ.
+%description xjed -l tr.UTF-8
+Jed metin dц╪zenleyicinin X altд╠nda ц╖alд╠е÷an sц╪rц╪mц╪.
 
-%description xjed -l uk
-Xjed - це той же редактор, що й jed, т╕льки працюючий у власному
-X-в╕кн╕.
+%description xjed -l uk.UTF-8
+Xjed - я├п╣ я┌п╬п╧ п╤п╣ я─п╣п╢п╟п╨я┌п╬я─, я┴п╬ п╧ jed, я┌я√п╩я▄п╨п╦ п©я─п╟я├я▌я▌я┤п╦п╧ я┐ п╡п╩п╟я│п╫п╬п╪я┐
+X-п╡я√п╨п╫я√.
 
 %package -n rgrep
 Summary:	Recursive grep utility
-Summary(de):	Rekursives grep-Utility-Programm
-Summary(es):	Utilitario grep recursivo
-Summary(fr):	Utilitaire grep rИcursif
-Summary(pl):	Rekursywna wersja narzЙdzia grep
-Summary(pt_BR):	UtilitАrio grep recursivo
-Summary(ru):	Рекурсивная утилита grep
-Summary(tr):	RekЭrsif bir grep sЭrЭmЭ
-Summary(uk):	Рекурсивна утил╕та grep
+Summary(de.UTF-8):   Rekursives grep-Utility-Programm
+Summary(es.UTF-8):   Utilitario grep recursivo
+Summary(fr.UTF-8):   Utilitaire grep rц╘cursif
+Summary(pl.UTF-8):   Rekursywna wersja narzд≥dzia grep
+Summary(pt_BR.UTF-8):   Utilitц║rio grep recursivo
+Summary(ru.UTF-8):   п═п╣п╨я┐я─я│п╦п╡п╫п╟я▐ я┐я┌п╦п╩п╦я┌п╟ grep
+Summary(tr.UTF-8):   Rekц╪rsif bir grep sц╪rц╪mц╪
+Summary(uk.UTF-8):   п═п╣п╨я┐я─я│п╦п╡п╫п╟ я┐я┌п╦п╩я√я┌п╟ grep
 Group:		Applications/Text
 
 %description -n rgrep
 A recursive `grep' utility that can highlight the matching expression,
 by the author of Jed.
 
-%description -n rgrep -l de
+%description -n rgrep -l de.UTF-8
 Ein rekursives `grep'-Dienstprogramm, das einen passenden Ausdruck
 markieren kann. Vom Autor von Jed.
 
-%description -n rgrep -l es
-Utilitario grep recursivo que puede destacar la expresiСn encontrada,
+%description -n rgrep -l es.UTF-8
+Utilitario grep recursivo que puede destacar la expresiцЁn encontrada,
 escrito por el autor del editor Jed.
 
-%description -n rgrep -l fr
-grep rИcursif pouvant mettre en Иvidence l'expression trouvИe, par
+%description -n rgrep -l fr.UTF-8
+grep rц╘cursif pouvant mettre en ц╘vidence l'expression trouvц╘e, par
 l'auteur de Jed.
 
-%description -n rgrep -l pl
-rgrep jest programem, ktСry mo©e zaznaczaФ poszukiwane ci╠gi znakСw w
-bie©╠cym katalogu i podkatalogach Ё╠cz╠cym w sobie cechy funkcjonalne
-u©ywania pary programСw find i grep.
+%description -n rgrep -l pl.UTF-8
+rgrep jest programem, ktцЁry moе╪e zaznaczaд┤ poszukiwane ciд┘gi znakцЁw w
+bieе╪д┘cym katalogu i podkatalogach е┌д┘czд┘cym w sobie cechy funkcjonalne
+uе╪ywania pary programцЁw find i grep.
 
-%description -n rgrep -l pt_BR
-UtilitАrio grep recursivo que pode destacar a expressЦo encontrada,
+%description -n rgrep -l pt_BR.UTF-8
+Utilitц║rio grep recursivo que pode destacar a expressцёo encontrada,
 escrito pelo autor do editor Jed.
 
-%description -n rgrep -l ru
-Рекурсивная утилита grep, умеющая подсвечивать найденные выражения.
+%description -n rgrep -l ru.UTF-8
+п═п╣п╨я┐я─я│п╦п╡п╫п╟я▐ я┐я┌п╦п╩п╦я┌п╟ grep, я┐п╪п╣я▌я┴п╟я▐ п©п╬п╢я│п╡п╣я┤п╦п╡п╟я┌я▄ п╫п╟п╧п╢п╣п╫п╫я▀п╣ п╡я▀я─п╟п╤п╣п╫п╦я▐.
 
-%description -n rgrep -l tr
-Jed'in yazarЩndan rekЭrsif bulduПu eЧlemeleri iЧaretleyebilen bir grep
-sЭrЭmЭ.
+%description -n rgrep -l tr.UTF-8
+Jed'in yazarд╠ndan rekц╪rsif bulduд÷u eе÷lemeleri iе÷aretleyebilen bir grep
+sц╪rц╪mц╪.
 
-%description -n rgrep -l uk
-Рекурсивна утил╕та grep, що вм╕╓ п╕дсв╕чувати знайден╕ вирази
+%description -n rgrep -l uk.UTF-8
+п═п╣п╨я┐я─я│п╦п╡п╫п╟ я┐я┌п╦п╩я√я┌п╟ grep, я┴п╬ п╡п╪я√я■ п©я√п╢я│п╡я√я┤я┐п╡п╟я┌п╦ п╥п╫п╟п╧п╢п╣п╫я√ п╡п╦я─п╟п╥п╦
 
 %prep
 %setup -q -n %{name}-%{tar_ver}
