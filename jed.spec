@@ -1,13 +1,13 @@
 %define		tar_ver	B0.99-17.111
 Summary:	A small fast editor
-Summary(de.UTF-8):   Ein kleiner, schneller Editor
-Summary(es.UTF-8):   Un pequeño y rápido editor
-Summary(fr.UTF-8):   Un petit éditeur rapide
-Summary(pl.UTF-8):   Mały i szybki edytor
-Summary(pt_BR.UTF-8):   Um pequeno e rápido editor
-Summary(ru.UTF-8):   Быстрый небольшой текстовый редактор на основе библиотеки slang
-Summary(tr.UTF-8):   Küçük, hızlı bir metin düzenleyici
-Summary(uk.UTF-8):   Швидкий компактний текстовий редактор на базі бібліотеки slang
+Summary(de.UTF-8):	Ein kleiner, schneller Editor
+Summary(es.UTF-8):	Un pequeño y rápido editor
+Summary(fr.UTF-8):	Un petit éditeur rapide
+Summary(pl.UTF-8):	Mały i szybki edytor
+Summary(pt_BR.UTF-8):	Um pequeno e rápido editor
+Summary(ru.UTF-8):	Быстрый небольшой текстовый редактор на основе библиотеки slang
+Summary(tr.UTF-8):	Küçük, hızlı bir metin düzenleyici
+Summary(uk.UTF-8):	Швидкий компактний текстовий редактор на базі бібліотеки slang
 Name:		jed
 Version:	0.99.17
 Release:	0.111.2
@@ -93,14 +93,14 @@ Jed - це швидкий компактний текстовий редакто
 
 %package xjed
 Summary:	Jed editor - X version
-Summary(de.UTF-8):   Jed-Editor - X-Version
-Summary(es.UTF-8):   Editor Jed - versión X
-Summary(fr.UTF-8):   Éditeur Jed - version X
-Summary(pl.UTF-8):   Edytor jed - wersja dla X Window
-Summary(pt_BR.UTF-8):   Editor Jed - versão X
-Summary(ru.UTF-8):   Редактор Jed - версия для X Window
-Summary(tr.UTF-8):   Jed metin düzenleyici - X sürümü
-Summary(uk.UTF-8):   Редактор Jed - версія для X Window
+Summary(de.UTF-8):	Jed-Editor - X-Version
+Summary(es.UTF-8):	Editor Jed - versión X
+Summary(fr.UTF-8):	Éditeur Jed - version X
+Summary(pl.UTF-8):	Edytor jed - wersja dla X Window
+Summary(pt_BR.UTF-8):	Editor Jed - versão X
+Summary(ru.UTF-8):	Редактор Jed - версия для X Window
+Summary(tr.UTF-8):	Jed metin düzenleyici - X sürümü
+Summary(uk.UTF-8):	Редактор Jed - версія для X Window
 Group:		X11/Applications/Editors
 Requires:	%{name} = %{version}-%{release}
 
@@ -136,14 +136,14 @@ X-вікні.
 
 %package -n rgrep
 Summary:	Recursive grep utility
-Summary(de.UTF-8):   Rekursives grep-Utility-Programm
-Summary(es.UTF-8):   Utilitario grep recursivo
-Summary(fr.UTF-8):   Utilitaire grep récursif
-Summary(pl.UTF-8):   Rekursywna wersja narzędzia grep
-Summary(pt_BR.UTF-8):   Utilitário grep recursivo
-Summary(ru.UTF-8):   Рекурсивная утилита grep
-Summary(tr.UTF-8):   Rekürsif bir grep sürümü
-Summary(uk.UTF-8):   Рекурсивна утиліта grep
+Summary(de.UTF-8):	Rekursives grep-Utility-Programm
+Summary(es.UTF-8):	Utilitario grep recursivo
+Summary(fr.UTF-8):	Utilitaire grep récursif
+Summary(pl.UTF-8):	Rekursywna wersja narzędzia grep
+Summary(pt_BR.UTF-8):	Utilitário grep recursivo
+Summary(ru.UTF-8):	Рекурсивная утилита grep
+Summary(tr.UTF-8):	Rekürsif bir grep sürümü
+Summary(uk.UTF-8):	Рекурсивна утиліта grep
 Group:		Applications/Text
 
 %description -n rgrep
