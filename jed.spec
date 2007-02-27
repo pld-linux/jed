@@ -1,4 +1,4 @@
-%define		tar_ver	B0.99-17.111
+%define		tar_ver	0.99-18
 Summary:	A small fast editor
 Summary(de.UTF-8):	Ein kleiner, schneller Editor
 Summary(es.UTF-8):	Un pequeño y rápido editor
@@ -9,12 +9,12 @@ Summary(ru.UTF-8):	Быстрый небольшой текстовый реда
 Summary(tr.UTF-8):	Küçük, hızlı bir metin düzenleyici
 Summary(uk.UTF-8):	Швидкий компактний текстовий редактор на базі бібліотеки slang
 Name:		jed
-Version:	0.99.17
-Release:	0.111.2
+Version:	0.99.18
+Release:	1
 License:	GPL
 Group:		Applications/Editors
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/pre-0.99-17/%{name}-%{tar_ver}.tar.bz2
-# Source0-md5:	1a0c3d3b19d12e920e37754cd06d06db
+Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
+# Source0-md5:	5378c8e7805854018d9ec5c3cfadf637
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
@@ -25,12 +25,12 @@ Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
 Patch3:		%{name}-info.patch
 Patch4:		%{name}-ac_am.patch
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gpm-devel
 BuildRequires:	slang-devel >= 2.0.0
 BuildRequires:	texinfo
+BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
