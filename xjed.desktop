@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Xjed
 Comment=Xjed Editor
 Comment[pl]=Edytor xjed
-Icon=xjed.png
+Icon=xjed
 Exec=xjed
 Terminal=false
 Type=Application
