@@ -38,3 +38,16 @@ diff -urN jed-B0.99-17.111.org/autoconf/aclocal.m4 jed-B0.99-17.111/autoconf/acl
    fi
  done
  
+--- jed/autoconf/configure.ac~	2006-02-13 18:51:58.000000000 +0100
++++ jed/autoconf/configure.ac	2008-10-23 09:08:31.496924350 +0200
+@@ -35,10 +35,6 @@
+ AC_HEADER_SYS_WAIT
+ AC_HEADER_DIRENT
+ 
+-AC_TYPE_MODE_T
+-AC_TYPE_PID_T
+-AC_TYPE_UID_T
+-
+ AC_CHECK_LIB(util,openpty)
+ 
+ AC_CHECK_FUNCS(\
