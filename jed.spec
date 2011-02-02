@@ -236,7 +236,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/jed
 %{_mandir}/man1/jed.1*
 %lang(pl) %{_mandir}/pl/man1/jed.1*
-%{_infodir}/*
+%{_infodir}/*.info*
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
 
 %files xjed
