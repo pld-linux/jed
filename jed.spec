@@ -31,6 +31,7 @@ BuildRequires:	gpm-devel
 BuildRequires:	slang-devel >= 2.0.0
 BuildRequires:	texinfo
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
