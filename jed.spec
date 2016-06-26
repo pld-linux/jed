@@ -14,7 +14,7 @@ Summary(tr.UTF-8):	Küçük, hızlı bir metin düzenleyici
 Summary(uk.UTF-8):	Швидкий компактний текстовий редактор на базі бібліотеки slang
 Name:		jed
 Version:	0.99.19
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Editors
 Source0:	http://www.jedsoft.org/releases/jed/%{name}-%{tar_ver}.tar.bz2
@@ -218,7 +218,9 @@ cd autoconf
 cd ..
 CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
 %configure \
-	%{?with_gtk:--with-gtk}
+	%{?with_gtk:--with-gtk} \
+	--with-slanginc=/usr/include/slang \
+	--with-slanglib=%{_libdir}
 
 %{__make} all
 %{__make} xjed
