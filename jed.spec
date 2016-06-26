@@ -1,4 +1,8 @@
-%define		tar_ver	0.99-18
+#
+# Conditional build:
+%bcond_without	gtk	# GTK+ (2.x) version of jed
+#
+%define		tar_ver	0.99-19
 Summary:	A small fast editor
 Summary(de.UTF-8):	Ein kleiner, schneller Editor
 Summary(es.UTF-8):	Un pequeño y rápido editor
@@ -9,12 +13,12 @@ Summary(ru.UTF-8):	Быстрый небольшой текстовый реда
 Summary(tr.UTF-8):	Küçük, hızlı bir metin düzenleyici
 Summary(uk.UTF-8):	Швидкий компактний текстовий редактор на базі бібліотеки slang
 Name:		jed
-Version:	0.99.18
-Release:	6
+Version:	0.99.19
+Release:	1
 License:	GPL v2+
 Group:		Applications/Editors
-Source0:	ftp://space.mit.edu/pub/davis/jed/v0.99/%{name}-%{tar_ver}.tar.bz2
-# Source0-md5:	5378c8e7805854018d9ec5c3cfadf637
+Source0:	http://www.jedsoft.org/releases/jed/%{name}-%{tar_ver}.tar.bz2
+# Source0-md5:	c9b2f58a3defc6f61faa1ce7d6d629ea
 Source1:	x%{name}.desktop
 Source2:	%{name}.conf
 Source3:	%{name}.1.pl
@@ -25,13 +29,16 @@ Patch1:		%{name}-XFree86_keys.patch
 Patch2:		%{name}-home_etc.patch
 Patch3:		%{name}-info.patch
 Patch4:		%{name}-ac_am.patch
-BuildRequires:	autoconf
+URL:		http://www.jedsoft.org/jed/
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gpm-devel
+%{?with_gtk:BuildRequires:	gtk+2-devel >= 2:2.8.0}
+BuildRequires:	pkgconfig >= 1:0.14.0
 BuildRequires:	slang-devel >= 2.0.0
 BuildRequires:	texinfo
 BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	xorg-lib-libXt-devel
+BuildRequires:	xorg-lib-libXft-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -91,6 +98,19 @@ Jed - це швидкий компактний текстовий редакто
 бібліотеці SLang. Він має спеціальні режими редагування для C, C++ та
 інших мов. Jed може емулювати Emacs, Wordstar та інші редактори і може
 бути настроєний на рівні макросів, кольорів, прив'язки клавіш і т.п.
+
+%package gtk
+Summary:	GTK+ version of Jed editor
+Summary(pl.UTF-8):	Wersja GTK+ edytora Jed
+Group:		X11/Applications/Editors
+Requires:	%{name} = %{version}-%{release}
+Requires:	gtk+2 >= 2:2.8.0
+
+%description gtk
+GTK+ version of Jed editor.
+
+%description gtk -l pl.UTF-8
+Wersja GTK+ edytora Jed.
 
 %package xjed
 Summary:	Jed editor - X version
@@ -191,16 +211,18 @@ sürümü.
 %patch4 -p1
 
 %build
-install /usr/share/automake/config.* autoconf
-mv -f autoconf/configure.ac .
-mv -f autoconf/aclocal.m4 acinclude.m4
-CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
-%{__aclocal}
+cp -f /usr/share/automake/config.* autoconf
+cd autoconf
 %{__autoconf}
-%configure
+%{__mv} configure ..
+cd ..
+CFLAGS="-DMEMCPY=SLmemcpy -DMEMSET=SLmemset -DMEMCHR=SLmemchr %{rpmcflags}"
+%configure \
+	%{?with_gtk:--with-gtk}
 
 %{__make} all
 %{__make} xjed
+%{?with_gtk:%{__make} -C src gtkjed}
 %{__make} rgrep
 
 %install
@@ -212,8 +234,9 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{?with_gtk:install src/objs/gtkjed $RPM_BUILD_ROOT%{_bindir}}
 install src/objs/rgrep $RPM_BUILD_ROOT%{_bindir}
-install info/jed.* $RPM_BUILD_ROOT%{_infodir}
+cp -p info/jed.info info/jed.?in $RPM_BUILD_ROOT%{_infodir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/jed.conf
@@ -224,27 +247,33 @@ install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
-%doc README changes.txt doc/txt/*.txt
+%doc COPYRIGHT README changes.txt doc/txt/*.txt
 %attr(755,root,root) %{_bindir}/jed
+%attr(755,root,root) %{_bindir}/jed-script
 %{_datadir}/jed
 %{_mandir}/man1/jed.1*
 %lang(pl) %{_mandir}/pl/man1/jed.1*
-%{_infodir}/*.info*
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
+%{_infodir}/jed.info*
+%{_infodir}/jed.[0-9]in*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/jed.conf
+
+%files gtk
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gtkjed
 
 %files xjed
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xjed
 %{_desktopdir}/xjed.desktop
-%{_pixmapsdir}/*.png
+%{_pixmapsdir}/xjed.png
 
 %files -n rgrep
 %defattr(644,root,root,755)

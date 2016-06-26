@@ -38,15 +38,3 @@ diff -urN jed-B0.99-17.111.org/autoconf/aclocal.m4 jed-B0.99-17.111/autoconf/acl
    fi
  done
  
---- jed-0.99-18.orig/autoconf/configure.ac	2006-02-13 18:51:58.000000000 +0100
-+++ jed-0.99-18/autoconf/configure.ac	2008-11-16 04:20:52.000000000 +0100
-@@ -4,6 +4,9 @@
- dnl   You can obtain this file from <ftp://space.mit.edu/pub/davis/acsite.m4>.
- dnl
- AC_INIT(src/ledit.c)
-+
-+AC_PROG_CC
-+
- JD_INIT
- 
- AC_CONFIG_AUX_DIR(autoconf)

@@ -1,30 +1,11 @@
-diff -urN jed-B0.99-17.111.org/src/Makefile.in jed-B0.99-17.111/src/Makefile.in
---- jed-B0.99-17.111.org/src/Makefile.in	2005-07-25 06:37:23.000000000 +0200
-+++ jed-B0.99-17.111/src/Makefile.in	2005-09-16 09:53:34.576743488 +0200
-@@ -14,9 +14,10 @@
- exec_prefix = @exec_prefix@
+--- jed-0.99-19/src/Makefile.in.orig	2016-06-26 14:08:11.521834233 +0200
++++ jed-0.99-19/src/Makefile.in	2016-06-26 14:17:35.022114822 +0200
+@@ -15,7 +15,7 @@
+ datarootdir = @datarootdir@
  #JED_ROOT = $(HOME)/src/jed# <--- make sure # is at end of file!!
  #JED_ROOT = $(prefix)/jed# <--- make sure # is at end of file!!
 -JED_ROOT = @JED_ROOT@# <--- make sure # is at end of file!!
 +JED_ROOT = @datadir@/jed# <--- make sure # is at end of file!!
  BIN_DIR = @bindir@
  MAN_DIR = @mandir@/man1
-+INFO_DIR = @infodir@
- INSTALL		= @INSTALL@
- INSTALL_DATA	= @INSTALL_DATA@
- MKINSDIR = ../autoconf/mkinsdir.sh
-@@ -51,10 +52,10 @@
- #---------------------------------------------------------------------------
- # 1. Linux GPM Mouse support
- #    Uncomment next FOUR lines for GPM mouse support
--#MOUSEFLAGS = -DUSE_GPM_MOUSE
--#MOUSELIB = -lgpm
--#GPMMOUSEO = gpmmouse.o
--#OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
-+MOUSEFLAGS = -DUSE_GPM_MOUSE
-+MOUSELIB = -lgpm
-+GPMMOUSEO = gpmmouse.o
-+OBJGPMMOUSEO = $(OBJDIR)/$(GPMMOUSEO)
- 
-  
- # 2. XFree86 XRENDERFONT (Anti-aliased font) support for XJED
+ INFO_DIR = @infodir@
