@@ -206,7 +206,7 @@ sürümü.
 %setup -q -n %{name}-%{tar_ver}
 %patch -P0 -p1
 %patch -P1 -p1
-#%patch2 -p1
+#%%patch2 -p1
 %patch -P3 -p1
 %patch -P4 -p1
 
