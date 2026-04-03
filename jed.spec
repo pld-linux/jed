@@ -14,7 +14,7 @@ Summary(tr.UTF-8):	Küçük, hızlı bir metin düzenleyici
 Summary(uk.UTF-8):	Швидкий компактний текстовий редактор на базі бібліотеки slang
 Name:		jed
 Version:	0.99.19
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Editors
 Source0:	http://www.jedsoft.org/releases/jed/%{name}-%{tar_ver}.tar.bz2
